@@ -5,7 +5,7 @@
         <a href="#" class="x-navigation-control"></a>
     </li>
     <li>
-        <a href="index.php?view=formation-client"><span class="fa fa-files-o"></span> <span class="xn-text">Vos Formations</span></a>
+        <a href="index.php?view=formation-client"><span class="fa fa-book"></span> <span class="xn-text">Vos Formations</span></a>
     </li>
     <!-- SIGN OUT -->
     <li class="xn-icon-button pull-right">

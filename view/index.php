@@ -1,4 +1,6 @@
 <?php
+$nom_sector = "";
+$nom_page = "";
 include ('include/header.php');
 ?>
     <body>
@@ -11,9 +13,9 @@ include ('include/header.php');
                 
                 <!-- START BREADCRUMB -->
                 <ul class="breadcrumb">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Layouts</a></li>
-                    <li class="active">Navigation Top</li>
+                    <li><a href="#"><?= NOM_LOGICIEL; ?></a></li>
+                    <li><a href="#"><?php if(!empty(nom_sector($nom_sector))){echo nom_sector($nom_sector);} ?></a></li>
+                    <li class="active"><?= nom_page($nom_page); ?></li>
                 </ul>
                 <!-- END BREADCRUMB -->                
                 
@@ -40,26 +42,6 @@ include ('include/header.php');
             <!-- END PAGE CONTENT -->
         </div>
         <!-- END PAGE CONTAINER -->
-
-        <!-- MESSAGE BOX-->
-        <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
-            <div class="mb-container">
-                <div class="mb-middle">
-                    <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
-                    <div class="mb-content">
-                        <p>Are you sure you want to log out?</p>                    
-                        <p>Press No if youwant to continue work. Press Yes to logout current user.</p>
-                    </div>
-                    <div class="mb-footer">
-                        <div class="pull-right">
-                            <a href="pages-login.html" class="btn btn-success btn-lg">Yes</a>
-                            <button class="btn btn-default btn-lg mb-control-close">No</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- END MESSAGE BOX-->
 
         <!-- START PRELOADS -->
         <audio id="audio-alert" src="<?= ROOT,ASSETS,AUDIO; ?>alert.mp3" preload="auto"></audio>
