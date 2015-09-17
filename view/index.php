@@ -1,5 +1,4 @@
 <?php
-$nom_page = "Bienvenue";
 include ('include/header.php');
 ?>
     <body>
