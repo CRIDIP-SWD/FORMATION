@@ -1,8 +1,13 @@
+<?=
+include ('config.php');
+
+include('classe.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- META SECTION -->
-    <title>Atlant - Responsive Bootstrap Admin Template</title>
+    <title><?= NOM_LOGICIEL; ?> - <?= nom_page($nom_page); ?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,6 +16,6 @@
     <!-- END META SECTION -->
 
     <!-- CSS INCLUDE -->
-    <link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css"/>
+    <link rel="stylesheet" type="text/css" id="theme" href="<?= ROOT,ASSETS,CSS; ?>theme-dark.css"/>
     <!-- EOF CSS INCLUDE -->
 </head>
