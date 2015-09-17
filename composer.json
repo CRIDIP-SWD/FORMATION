@@ -8,5 +8,8 @@
       "name": "CRIDIP-SWD",
       "email": "mmockelyn@cridip.com"
     }
-  ]
+  ],
+  "require": {
+    "mikehaertl/phpwkhtmltopdf": "2.1.0"
+  }
 }
