@@ -7,7 +7,7 @@ include('classe.php');
 <html lang="en">
 <head>
     <!-- META SECTION -->
-    <title><?= NOM_LOGICIEL; ?> - <?= nom_page($nom_page); ?></title>
+    <title><?= NOM_LOGICIEL; ?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
