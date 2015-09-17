@@ -1,0 +1,12 @@
+{
+  "name": "CRIDIP-SWD/FORMATION",
+  "description": "Logiciel de Gestion de Formation",
+  "minimum-stability": "dev",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "CRIDIP-SWD",
+      "email": "mmockelyn@cridip.com"
+    }
+  ]
+}
