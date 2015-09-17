@@ -20,7 +20,7 @@ include ('include/header.php');
                 <!-- END BREADCRUMB -->                
                 
                 <div class="page-title">                    
-                    <h2><span class="fa fa-arrow-circle-o-left"></span> Navigation Top</h2>
+                    <h2><span class="fa fa-arrow-circle-o-left"></span> <?= nom_page($nom_page); ?></h2>
                 </div>                   
                 
                 <!-- PAGE CONTENT WRAPPER -->
