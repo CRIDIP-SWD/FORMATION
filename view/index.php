@@ -1,17 +1,17 @@
 <?php
 $nom_sector = "";
 $nom_page = "";
-include "inc/header.php";
+include "include/header.php";
 ?>
 
 <body class="page-container-bg-solid page-header-fixed page-sidebar-closed-hide-logo">
-<?php include "inc/headerbar.php"; ?>
+<?php include "include/headerbar.php"; ?>
 <!-- BEGIN HEADER & CONTENT DIVIDER -->
 <div class="clearfix"> </div>
 <!-- END HEADER & CONTENT DIVIDER -->
 <!-- BEGIN CONTAINER -->
 <div class="page-container">
-    <?php include "inc/sidebar.php"; ?>
+    <?php include "include/sidebar.php"; ?>
     <!-- BEGIN CONTENT -->
     <div class="page-content-wrapper">
         <!-- BEGIN CONTENT BODY -->
