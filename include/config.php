@@ -7,10 +7,8 @@ DEFINE("BUILD_LOGICIEL", "1236");
 //DEFINE LINK
 DEFINE("ROOT", "http://formation.cridip.com/");
 DEFINE("ASSETS", "assets/");
-    DEFINE("AUDIO", "audio/");
     DEFINE("CSS", "css/");
     DEFINE("IMG", "img/");
-    DEFINE("IMAGES", "images/");
     DEFINE("JS", "js/");
     DEFINE("PLUGINS", "plugins/");
 DEFINE("CONTROL", "control/");
