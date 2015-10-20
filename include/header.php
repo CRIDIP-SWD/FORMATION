@@ -28,7 +28,7 @@ include "classe.php";
     <!-- END THEME GLOBAL STYLES -->
     <!-- BEGIN THEME LAYOUT STYLES -->
     <link href="<?= ROOT,ASSETS,CSS; ?>layout.min.css" rel="stylesheet" type="text/css" />
-    <link href="<?= ROOT,ASSETS,CSS; ?>themes/blue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="<?= ROOT,ASSETS,CSS; ?>themes/default.min.css" rel="stylesheet" type="text/css" id="style_color" />
     <link href="<?= ROOT,ASSETS,CSS; ?>custom.min.css" rel="stylesheet" type="text/css" />
     <!-- END THEME LAYOUT STYLES -->
 </head>
