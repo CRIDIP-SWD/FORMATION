@@ -5,7 +5,7 @@ DEFINE("VERSION_LOGICIEL", "0.1.0");
 DEFINE("BUILD_LOGICIEL", "1236");
 
 //DEFINE LINK
-DEFINE("ROOT", "http://vps162634.ovh.net/formation/");
+DEFINE("ROOT", "http://formation.cridip.com/");
 DEFINE("ASSETS", "assets/");
     DEFINE("AUDIO", "audio/");
     DEFINE("CSS", "css/");
