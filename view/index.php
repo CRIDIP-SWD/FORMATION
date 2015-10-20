@@ -1,6 +1,6 @@
 <?php
 $nom_sector = "";
-$nom_page = "";
+$nom_page = "Accueil";
 include "include/header.php";
 ?>
 
