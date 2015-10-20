@@ -38,7 +38,7 @@
                             </li>
                             <li>
                                 <a href="page_user_login_1.html">
-                                    <i class="icon-key"></i> Déconnexion </a>
+                                    <i class="icon-key"></i> DÃ©connexion </a>
                             </li>
                         </ul>
                     </li>
