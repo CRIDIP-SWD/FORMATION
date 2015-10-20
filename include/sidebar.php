@@ -18,7 +18,7 @@
                     <span class="title">Vos Informations</span>
                 </a>
             </li>
-            <li class="nav-item <?php if($_GET['sub'] == 'info'){echo "active open";} ?>">
+            <li class="nav-item <?php if($_GET['sub'] == 'formation'){echo "active open";} ?>">
                 <a href="index.php?view=index&sub=formation" class="nav-link nav-toggle">
                     <i class="icon-schedule"></i>
                     <span class="title">Vos Formations</span>
