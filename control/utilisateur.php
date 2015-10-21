@@ -150,6 +150,6 @@ if(isset($_GET['action']) && $_GET['action'] == 'deconnect')
     session_start();
     session_unset();
     session_destroy();
-    header("Location: ../index.php?view=login&warn=deconnect");
+    header("Location: ../index.php?view=login");
     exit();
 }
