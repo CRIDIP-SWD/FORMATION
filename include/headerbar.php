@@ -26,7 +26,6 @@
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                             <span class="username username-hide-on-mobile"> <?= $info_user['nom_user']; ?> <?= $info_user['prenom_user']; ?><br><h6><i><?php if($info_user['type'] == 0){echo "Administrateur";}else{echo "Client";} ?></i></h6></span>
                             <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
-                            <i class="<?= $info_user['avatar']; ?> img-circle"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-default">
                             <li>
