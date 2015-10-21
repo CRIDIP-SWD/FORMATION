@@ -52,80 +52,39 @@ include "include/header.php";
                             <div class="portlet-title">
                                 <div class="caption">
                                     <i class="icon-bubble font-green-sharp"></i>
-                                    <span class="caption-subject font-green-sharp bold uppercase">Default Pills</span>
-                                </div>
-                                <div class="actions">
-                                    <div class="btn-group">
-                                        <a class="btn green-haze btn-outline btn-circle btn-sm" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"> Actions
-                                            <i class="fa fa-angle-down"></i>
-                                        </a>
-                                        <ul class="dropdown-menu pull-right">
-                                            <li>
-                                                <a href="javascript:;"> Option 1</a>
-                                            </li>
-                                            <li class="divider"> </li>
-                                            <li>
-                                                <a href="javascript:;">Option 2</a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">Option 3</a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">Option 4</a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    <span class="caption-subject font-green-sharp bold uppercase">Bienvenue</span>
                                 </div>
                             </div>
                             <div class="portlet-body">
                                 <ul class="nav nav-pills">
                                     <li class="active">
-                                        <a href="#tab_2_1" data-toggle="tab"> Home </a>
+                                        <a href="#ie" data-toggle="tab"> Inter Entreprise </a>
                                     </li>
                                     <li>
-                                        <a href="#tab_2_2" data-toggle="tab"> Profile </a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="javascript:;" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown"> Dropdown
-                                            <i class="fa fa-angle-down"></i>
-                                        </a>
-                                        <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
-                                            <li>
-                                                <a href="#tab_2_3" tabindex="-1" data-toggle="tab"> Option 1 </a>
-                                            </li>
-                                            <li>
-                                                <a href="#tab_2_4" tabindex="-1" data-toggle="tab"> Option 2 </a>
-                                            </li>
-                                            <li>
-                                                <a href="#tab_2_3" tabindex="-1" data-toggle="tab"> Option 3 </a>
-                                            </li>
-                                            <li>
-                                                <a href="#tab_2_4" tabindex="-1" data-toggle="tab"> Option 4 </a>
-                                            </li>
-                                        </ul>
+                                        <a href="#cat" data-toggle="tab"> Catalogue </a>
                                     </li>
                                 </ul>
                                 <div class="tab-content">
-                                    <div class="tab-pane fade active in" id="tab_2_1">
-                                        <p> Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
-                                            retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi
-                                            qui. </p>
+                                    <div class="tab-pane fade active in" id="ie">
+                                        <h1>FORMATION INTER ENTREPRISE - SECURITE</h1>
+                                        <form class="form-horizontal" action="<?= ROOT,CONTROL; ?>commande.php" method="POST">
+                                            <div class="form-group">
+                                                <label for="single" class="control-label">Selectionner le Thème de la Formation</label>
+                                                <select id="single" name="theme" class="form-control select2">
+                                                    <option></option>
+                                                    <option value="Habilitation Electrique BS-BE Manoeuvre">Habilitation Electrique BS-BE Manoeuvre 190€ HT (Jour/Pers)</option>
+                                                    <option value="Sauveteur Secouriste du Travail (SST initial)">Sauveteur Secouriste du Travail (SST initial) 190€ HT (Jour/Pers)</option>
+                                                    <option value="Formation et CACES Chariots 1, 3 et 5">Formation et CACES Chariots 1, 3 et 5 280€ HT (Jour/Pers)</option>
+                                                    <option value="Formation et CACES PEMP 1B & 3B">Formation et CACES PEMP 1B & 3B 240€ HT (Jour/Pers)</option>
+                                                    <option value="Echafaudages Roulants">Echafaudages Roulants 210€ HT (Jour/Pers)</option>
+                                                </select>
+                                            </div>
+
+
+                                        </form>
                                     </div>
-                                    <div class="tab-pane fade" id="tab_2_2">
-                                        <p> Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft
-                                            beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica
-                                            VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
-                                            stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park. </p>
-                                    </div>
-                                    <div class="tab-pane fade" id="tab_2_3">
-                                        <p> Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard
-                                            locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie
-                                            etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr. </p>
-                                    </div>
-                                    <div class="tab-pane fade" id="tab_2_4">
-                                        <p> Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore
-                                            wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh
-                                            craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan. </p>
+                                    <div class="tab-pane fade" id="cat">
+
                                     </div>
                                 </div>
                             </div>
@@ -146,6 +105,10 @@ include "include/header.php";
 </div>
 <!-- END CONTAINER -->
 <?php include "include/footer.php"; ?>
+<link href="<?= ROOT,ASSETS,PLUGINS; ?>select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+<link href="<?= ROOT,ASSETS,PLUGINS; ?>select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>select2/js/select2.full.min.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,JS; ?>components-select2.min.js" type="text/javascript"></script>
 <!-- BEGIN SCRIPT PAGE -->
 
 <!-- END SCRIPT PAGE -->
