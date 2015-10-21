@@ -71,9 +71,9 @@ var Login = function() {
 
             // init background slide images
             $('.login-bg').backstretch([
-                "../img/login/bg1.jpg",
-                "../img/login/bg2.jpg",
-                "../img/login/bg3.jpg"
+                "http://formation.cridip.com/assets/img/login/bg1.jpg",
+                "http://formation.cridip.com/assets/img/login/bg2.jpg",
+                "http://formation.cridip.com/assets/img/login/bg3.jpg"
                 ], {
                   fade: 1000,
                   duration: 8000
