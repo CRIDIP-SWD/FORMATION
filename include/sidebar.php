@@ -14,13 +14,13 @@
         <ul class="page-sidebar-menu   " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
             <li class="nav-item <?php if($_GET['sub'] == 'info'){echo "active open";} ?>">
                 <a href="index.php?view=index&sub=info" class="nav-link nav-toggle">
-                    <i class="icon-account"></i>
+                    <i class="icon-user"></i>
                     <span class="title">Vos Informations</span>
                 </a>
             </li>
             <li class="nav-item <?php if($_GET['sub'] == 'formation'){echo "active open";} ?>">
                 <a href="index.php?view=index&sub=formation" class="nav-link nav-toggle">
-                    <i class="icon-schedule"></i>
+                    <i class="icon-calendar"></i>
                     <span class="title">Vos Formations</span>
                 </a>
             </li>
