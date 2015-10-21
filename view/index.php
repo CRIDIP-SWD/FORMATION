@@ -76,8 +76,9 @@ include "include/header.php";
                                                     $sql_inter_formation = mysql_query("SELECT * FROM inter_calendar_formation ORDER BY date_formation ASC")or die(mysql_error());
                                                     while($if = mysql_fetch_array($sql_inter_formation))
                                                     {
+
                                                     ?>
-                                                    <option value="<?= $if['idformation']; ?>" data-content="<?= $if['theme']; ?> du <strong>test</strong> - <?= number_format($if['prix'], 2, ',', ' ')." €"; ?> - <?= $if['duree']; ?>"></option>
+                                                    <option value="<?= $if['idformation']; ?>" data-content="<?= $if['theme']; ?> du <strong><?= $date_class->jour_semaine(date('N', $if['date_formation'])); ?> <?= date('d', $if['date_formation']); ?> <?= $date_class->mois(date('n', $if['date_formation'])); ?> <?= date('Y', $if['date_formation']); ?></strong> - <?= number_format($if['prix'], 2, ',', ' ')." €"; ?> - <?= $if['duree']; ?>"></option>
                                                     <?php } ?>
                                                 </select>
                                                 <p>
