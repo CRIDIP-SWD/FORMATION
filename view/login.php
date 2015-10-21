@@ -40,7 +40,7 @@
 <div class="user-login-5">
     <div class="row bs-reset">
         <div class="col-md-6 bs-reset">
-            <img src="assets/img/login/bg1.jpg" />
+            <img src="assets/img/login/bg1.jpg" class="login-bg"/>
         </div>
         <div class="col-md-6 login-container bs-reset">
             <div class="login-content">
