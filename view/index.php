@@ -86,6 +86,15 @@ include "include/header.php";
                                                     <strong>Décembre:</strong> Nous consulter pour la formation <strong>ECHAFAUDAGE ROULANT</strong>
                                                 </p>
                                             </div>
+
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Nombre de Personne</label>
+                                                <div class="col-md-4">
+                                                    <input id="touchspin_5" type="text" value="" name="nb_personne">
+                                                </div>
+                                            </div>
+
+
                                         </form>
                                     </div>
                                     <div class="tab-pane fade" id="cat">
@@ -117,6 +126,9 @@ include "include/header.php";
 <script src="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-select/js/bootstrap-select.min.js" type="text/javascript"></script>
 <script src="<?= ROOT,ASSETS,JS; ?>components-bootstrap-select.min.js" type="text/javascript"></script>
 <script src="<?= ROOT,ASSETS,JS; ?>components-select2.min.js" type="text/javascript"></script>
+<link href="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-touchspin/bootstrap.touchspin.css" rel="stylesheet" type="text/css" />
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-touchspin/bootstrap.touchspin.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,JS; ?>components-bootstrap-touchspin.min.js" type="text/javascript"></script>
 <!-- BEGIN SCRIPT PAGE -->
 
 <!-- END SCRIPT PAGE -->
