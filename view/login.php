@@ -89,6 +89,7 @@
     <!-- END FORGOT PASSWORD FORM -->
 </div>
 <!-- END LOGIN -->
+<link href="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-toastr/toastr.min.css" rel="stylesheet" type="text/css" />
 <!--[if lt IE 9]>
 <script src="<?= ROOT,ASSETS,PLUGINS; ?>respond.min.js"></script>
 <script src="<?= ROOT,ASSETS,PLUGINS; ?>excanvas.min.js"></script>
@@ -107,15 +108,40 @@
 <script src="<?= ROOT,ASSETS,PLUGINS; ?>jquery-validation/js/additional-methods.min.js" type="text/javascript"></script>
 <script src="<?= ROOT,ASSETS,PLUGINS; ?>select2/js/select2.full.min.js" type="text/javascript"></script>
 <script src="<?= ROOT,ASSETS,PLUGINS; ?>backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-toastr/toastr.min.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN THEME GLOBAL SCRIPTS -->
 <script src="<?= ROOT,ASSETS,JS; ?>app.min.js" type="text/javascript"></script>
 <!-- END THEME GLOBAL SCRIPTS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="<?= ROOT,ASSETS,JS; ?>login-4.min.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,JS; ?>ui-toastr.min.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <!-- BEGIN THEME LAYOUT SCRIPTS -->
 <!-- END THEME LAYOUT SCRIPTS -->
+<!-- BEGIN SCRIPT PAGE -->
+<?php if(isset($_GET['error']) && $_GET['error'] == 'no_compte'){ ?>
+    <script type="text/javascript">
+        toastr.error("L'utilisateur n'existe pas !", "ERREUR COMPTE UTILISATEUR",{
+            "positionClass" = "toast-top-center"
+        })
+    </script>
+<?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'bdd'){ ?>
+    <script type="text/javascript">
+        toastr.error("Plusieurs Identifiant rencontrée dans la base de donnée.<br><strong>Veuillez contacter l'administrateur système.</strong>", "ERREUR BASE DE DONNEE",{
+            "positionClass" = "toast-top-center"
+        })
+    </script>
+<?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'champs'){ ?>
+    <script type="text/javascript">
+        toastr.warning("Un ou plusieurs champs requis sont vides, veuillez réessayer.", "FORMULAIRE INCOMPLET",{
+            "positionClass" = "toast-top-center"
+        })
+    </script>
+<?php } ?>
+<!-- END SCRIPT PAGE -->
 </body>
 
 </html>
