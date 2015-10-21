@@ -66,7 +66,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'reinit-pass')
     include "../include/config.php";
     if(isset($_POST['login']) && !empty($_POST['login']))
     {
-        $login = $_GET['login'];
+        $login = $_POST['login'];
         $sql_verif_user = mysql_query("SELECT count(*) FROM utilisateur WHERE login = '$login'");
         $verif_user = mysql_fetch_array($sql_verif_user);
 
