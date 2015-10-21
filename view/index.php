@@ -78,9 +78,11 @@ include "include/header.php";
                                                     <option value="Formation et CACES PEMP 1B & 3B">Formation et CACES PEMP 1B & 3B - 240€ HT (Jour/Pers)</option>
                                                     <option value="Echafaudages Roulants">Echafaudages Roulants - 210€ HT (Jour/Pers)</option>
                                                 </select>
+                                                <p>
+                                                    <strong>Octobre:</strong> Nous consulter pour la formation <strong>ECHAFAUDAGE ROULANT</strong><br>
+                                                    <strong>Décembre:</strong> Nous consulter pour la formation <strong>ECHAFAUDAGE ROULANT</strong>
+                                                </p>
                                             </div>
-
-
                                         </form>
                                     </div>
                                     <div class="tab-pane fade" id="cat">
