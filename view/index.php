@@ -77,7 +77,7 @@ include "include/header.php";
                                                     while($if = mysql_fetch_array($sql_inter_formation))
                                                     {
                                                     ?>
-                                                    <option value="<?= $if['idformation']; ?>"><?= $if['theme']; ?> du <strong>test</strong> - <?= number_format($if['prix'], 2, ',', ' ')." €"; ?> - <?= $if['duree']; ?></option>
+                                                    <option value="<?= $if['idformation']; ?>" data-content="<?= $if['theme']; ?> du <strong>test</strong> - <?= number_format($if['prix'], 2, ',', ' ')." €"; ?> - <?= $if['duree']; ?>"></option>
                                                     <?php } ?>
                                                 </select>
                                                 <p>
