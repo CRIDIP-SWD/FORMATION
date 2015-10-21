@@ -8,9 +8,9 @@
  */
 class utilisateur
 {
-    public function client($idclient)
+    public function client($idcontact)
     {
-        $sql_client = mysql_query("SELECT * FROM client WHERE idclient = '$idclient'")or die(mysql_error());
+        $sql_client = mysql_query("SELECT * FROM contact WHERE idcontact = '$idcontact'")or die(mysql_error());
         $client = mysql_fetch_array($sql_client);
         return $client;
     }
@@ -19,7 +19,7 @@ class utilisateur
         $sql_user = mysql_query("SELECT * FROM utilisateur WHERE login = '$login'")or die(mysql_error());
         $user = mysql_fetch_array($sql_user);
         if($user['type'] == 1){
-            $user = $this->client($user['idclient']);
+            $user = $this->client($user['idcontact']);
             return $user;
         }else{
             return $user;
