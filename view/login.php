@@ -40,7 +40,7 @@
 <div class="user-login-5">
     <div class="row bs-reset">
         <div class="col-md-6 bs-reset">
-            <div class="login-bg" style="background: url(assets/img/login/bg1.jpg) no-repeat;">
+            <div class="login-bg">
             </div>
         </div>
         <div class="col-md-6 login-container bs-reset">
