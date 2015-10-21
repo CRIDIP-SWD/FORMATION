@@ -33,7 +33,7 @@
                                     $client_info = $user->client($info_user['idcontact']);
                                     ?>
                                     <?= $info_user['nom_user']; ?> <?= $info_user['prenom_user']; ?><br>
-                                    <h6><i><?= $client_info[''</i></h6>
+                                    <h6><i><?= $client_info['nom_societe']; ?></i></h6>
                                 <?php } ?>
                             </span>
                             <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
