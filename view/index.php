@@ -69,8 +69,8 @@ include "include/header.php";
                                         <h1>FORMATION INTER ENTREPRISE - SECURITE</h1>
                                         <form class="form-horizontal" action="<?= ROOT,CONTROL; ?>commande.php" method="POST">
                                             <div class="form-group">
-                                                <label for="single" class="control-label">Selectionner le Thème de la Formation</label>
-                                                <select id="single" name="theme" class="form-control select2">
+                                                <label for="single" class="control-label col-md-3">Selectionner le Thème de la Formation</label>
+                                                <select id="single" name="theme" class="form-control bs-select" data-show-subtext="true">
                                                     <option></option>
                                                     <?php
                                                     $sql_inter_formation = mysql_query("SELECT * FROM inter_calendar_formation ORDER BY date_formation ASC")or die(mysql_error());
@@ -112,6 +112,9 @@ include "include/header.php";
 <link href="<?= ROOT,ASSETS,PLUGINS; ?>select2/css/select2.min.css" rel="stylesheet" type="text/css" />
 <link href="<?= ROOT,ASSETS,PLUGINS; ?>select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
 <script src="<?= ROOT,ASSETS,PLUGINS; ?>select2/js/select2.full.min.js" type="text/javascript"></script>
+<link href="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-select/js/bootstrap-select.min.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,JS; ?>components-bootstrap-select.min.js" type="text/javascript"></script>
 <script src="<?= ROOT,ASSETS,JS; ?>components-select2.min.js" type="text/javascript"></script>
 <!-- BEGIN SCRIPT PAGE -->
 
