@@ -120,6 +120,14 @@
 <!-- BEGIN THEME LAYOUT SCRIPTS -->
 <!-- END THEME LAYOUT SCRIPTS -->
 <!-- BEGIN SCRIPT PAGE -->
+<?php if(isset($_GET['success']) && $_GET['success'] == 'reinit-pass'){ ?>
+    <script type="text/javascript">
+        toastr.success("Un nouveau mot de passe vous à été envoyer à l'email de contact", "REINITIALISATION DU MOT DE PASSE",{
+            "positionClass": "toast-top-full-width"
+        })
+    </script>
+<?php } ?>
+
 <?php if(isset($_GET['error']) && $_GET['error'] == 'no_compte'){ ?>
     <script type="text/javascript">
         toastr.error("L'utilisateur n'existe pas !", "ERREUR COMPTE UTILISATEUR",{
@@ -141,6 +149,15 @@
         })
     </script>
 <?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'reinit-pass'){ ?>
+    <script type="text/javascript">
+        toastr.error("Une erreur à eu lieu lors de la réinitialisation du mot de passe", "REINITIALISATION DU MOT DE PASSE",{
+            "positionClass": "toast-top-full-width"
+        })
+    </script>
+<?php } ?>
+
+
 <?php if(isset($_GET['warn']) && $_GET['warn'] == 'deconnect'){ ?>
     <script type="text/javascript">
         toastr.warning("Vous avez été déconnecté.", "DECONNEXION AUTOMATIQUE",{
