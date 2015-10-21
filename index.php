@@ -7,13 +7,10 @@
                 include ('view/index.php');
                 break;
 
-            case "formation-client":
-                include ('view/formation-client.php');
+            case "login":
+                include ('view/login.php');
                 break;
 
-            case "espace-client":
-                include ('view/espace-client.php');
-                break;
         }
     }else{
         include ('view/error-no-redirect.php');
