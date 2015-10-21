@@ -141,6 +141,13 @@
         })
     </script>
 <?php } ?>
+<?php if(isset($_GET['warn']) && $_GET['warn'] == 'deconnect'){ ?>
+    <script type="text/javascript">
+        toastr.warning("Vous avez été déconnecté.", "DECONNEXION AUTOMATIQUE",{
+            "positionClass" = "toast-top-center"
+        })
+    </script>
+<?php } ?>
 <!-- END SCRIPT PAGE -->
 </body>
 
