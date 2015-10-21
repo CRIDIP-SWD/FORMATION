@@ -1,5 +1,5 @@
 <?php
-
+use \autre;
 /**
  * Created by PhpStorm.
  * User: CRIDIP-SWD
@@ -60,4 +60,32 @@ if(isset($_POST['action']) && $_POST['action'] == 'Connexion')
     {
         header("Location: ../index.php?view=login&error=champs");
     }
+}
+if(isset($_POST['action']) && $_POST['action'] == 'reinit-pass')
+{
+    include "../include/config.php";
+    if(isset($_POST['login']) && !empty($_POST['login']))
+    {
+        $sql_verif_user = mysql_query("SELECT count(*) FROM utilisateur WHERE login = '$login'");
+        $verif_user = mysql_fetch_array($sql_verif_user);
+
+        if($verif_user[0] == 1)
+        {
+            $sql_user = mysql_query("SELECT * FROM utilisateur WHERE login = '$login'")or die(mysql_error());
+            $user = mysql_fetch_array($sql_user);
+            $email = $user['email'];
+            $autre = new autre();
+            $new_pass = $autre->gen_password(5);
+            echo $new_pass;
+
+        }
+    }
+}
+if(isset($_GET['action']) && $_GET['action'] == 'deconnect')
+{
+    session_start();
+    session_unset();
+    session_destroy();
+    header("Location: ../index.php?view=login&warn=deconnect");
+    exit();
 }
