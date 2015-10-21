@@ -82,11 +82,12 @@ include "include/header.php";
                                                             <option value="<?= $if['idformation']; ?>" data-content="<?= $if['theme']; ?> du <strong><?= $date_class->jour_semaine(date('N', $if['date_formation'])); ?> <?= date('d', $if['date_formation']); ?> <?= $date_class->mois(date('n', $if['date_formation'])); ?> <?= date('Y', $if['date_formation']); ?></strong> - <?= number_format($if['prix'], 2, ',', ' ')." €"; ?> - <?= $if['duree']; ?>"></option>
                                                         <?php } ?>
                                                     </select>
+                                                    <p>
+                                                        <strong>Octobre:</strong> Nous consulter pour la formation <strong>ECHAFAUDAGE ROULANT</strong><br>
+                                                        <strong>Décembre:</strong> Nous consulter pour la formation <strong>ECHAFAUDAGE ROULANT</strong>
+                                                    </p>
                                                 </div>
-                                                <p>
-                                                    <strong>Octobre:</strong> Nous consulter pour la formation <strong>ECHAFAUDAGE ROULANT</strong><br>
-                                                    <strong>Décembre:</strong> Nous consulter pour la formation <strong>ECHAFAUDAGE ROULANT</strong>
-                                                </p>
+
                                             </div>
 
                                             <div class="form-group">
