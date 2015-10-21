@@ -27,20 +27,35 @@
                             <span class="username username-hide-on-mobile"> <?= $info_user['nom_user']; ?> <?= $info_user['prenom_user']; ?><br><h6><i><?php if($info_user['type'] == 0){echo "Administrateur";}else{echo "Client";} ?></i></h6></span>
                             <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-default">
-                            <li>
-                                <a href="page_user_profile_1.html">
-                                    <i class="icon-user"></i> Mes Informations </a>
-                            </li>
-                            <li>
-                                <a href="app_calendar.html">
-                                    <i class="icon-calendar"></i> Mes Formations </a>
-                            </li>
-                            <li>
-                                <a href="page_user_login_1.html">
-                                    <i class="icon-key"></i> Déconnexion </a>
-                            </li>
-                        </ul>
+                        <?php if($info_user['type'] == 0){ ?>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a href="index.php?view=index&sub=profil">
+                                        <i class="icon-user"></i> Mon Profil </a>
+                                </li>
+                                <li>
+                                    <a href="<?= ROOT,CONTROL; ?>utilisateur.php?action=deconnect">
+                                        <i class="icon-key"></i> Déconnexion
+                                    </a>
+                                </li>
+                            </ul>
+                        <?php } ?>
+                        <?php if($info_user['type'] == 1){ ?>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a href="index.php?view=index&sub=profil">
+                                        <i class="icon-user"></i> Mes Informations </a>
+                                </li>
+                                <li>
+                                    <a href="index.php?view=index&sub=formation">
+                                        <i class="icon-calendar"></i> Mes Formations </a>
+                                </li>
+                                <li>
+                                    <a href="<?= ROOT,CONTROL; ?>utilisateur.php?action=deconnect">
+                                        <i class="icon-key"></i> Déconnexion </a>
+                                </li>
+                            </ul>
+                        <?php } ?>
                     </li>
                     <!-- END USER LOGIN DROPDOWN -->
                 </ul>
