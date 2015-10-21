@@ -123,28 +123,28 @@
 <?php if(isset($_GET['error']) && $_GET['error'] == 'no_compte'){ ?>
     <script type="text/javascript">
         toastr.error("L'utilisateur n'existe pas !", "ERREUR COMPTE UTILISATEUR",{
-            "positionClass" = "toast-top-center"
+            "positionClass": "toast-top-center"
         })
     </script>
 <?php } ?>
 <?php if(isset($_GET['error']) && $_GET['error'] == 'bdd'){ ?>
     <script type="text/javascript">
         toastr.error("Plusieurs Identifiant rencontrée dans la base de donnée.<br><strong>Veuillez contacter l'administrateur système.</strong>", "ERREUR BASE DE DONNEE",{
-            "positionClass" = "toast-top-center"
+            "positionClass": "toast-top-center"
         })
     </script>
 <?php } ?>
 <?php if(isset($_GET['error']) && $_GET['error'] == 'champs'){ ?>
     <script type="text/javascript">
         toastr.warning("Un ou plusieurs champs requis sont vides, veuillez réessayer.", "FORMULAIRE INCOMPLET",{
-            "positionClass" = "toast-top-center"
+            "positionClass": "toast-top-center"
         })
     </script>
 <?php } ?>
 <?php if(isset($_GET['warn']) && $_GET['warn'] == 'deconnect'){ ?>
     <script type="text/javascript">
         toastr.warning("Vous avez été déconnecté.", "DECONNEXION AUTOMATIQUE",{
-            "positionClass" = "toast-top-center"
+            "positionClass": "toast-top-center"
         })
     </script>
 <?php } ?>
