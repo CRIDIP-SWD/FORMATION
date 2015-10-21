@@ -24,7 +24,18 @@
                     <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                     <li class="dropdown dropdown-user dropdown-dark">
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                            <span class="username username-hide-on-mobile"> <?= $info_user['nom_user']; ?> <?= $info_user['prenom_user']; ?><br><h6><i><?php if($info_user['type'] == 0){echo "Administrateur";}else{echo "Client";} ?></i></h6></span>
+                            <span class="username username-hide-on-mobile">
+                                <?php if($info_user['type'] == 0){ ?>
+                                    <?= $info_user['nom_user']; ?> <?= $info_user['prenom_user']; ?><br>
+                                    <h6><i>CLH Formation</i></h6>
+                                <?php }else{ ?>
+                                    <?php
+                                    $client_info = $user->client($info_user['idcontact']);
+                                    ?>
+                                    <?= $info_user['nom_user']; ?> <?= $info_user['prenom_user']; ?><br>
+                                    <h6><i><?= $client_info[''</i></h6>
+                                <?php } ?>
+                            </span>
                             <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
                         </a>
                         <?php if($info_user['type'] == 0){ ?>

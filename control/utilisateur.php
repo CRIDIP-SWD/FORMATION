@@ -10,7 +10,7 @@ class utilisateur
 {
     public function client($idcontact)
     {
-        $sql_client = mysql_query("SELECT * FROM contact WHERE idcontact = '$idcontact'")or die(mysql_error());
+        $sql_client = mysql_query("SELECT * FROM contact, client WHERE contact.idclient = client.idclient AND contact.idcontact = '$idcontact'")or die(mysql_error());
         $client = mysql_fetch_array($sql_client);
         return $client;
     }
