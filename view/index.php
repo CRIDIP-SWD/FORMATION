@@ -72,11 +72,11 @@ include "include/header.php";
                                                 <label for="single" class="control-label">Selectionner le Thème de la Formation</label>
                                                 <select id="single" name="theme" class="form-control select2">
                                                     <option></option>
-                                                    <option value="Habilitation Electrique BS-BE Manoeuvre">Habilitation Electrique BS-BE Manoeuvre 190€ HT (Jour/Pers)</option>
-                                                    <option value="Sauveteur Secouriste du Travail (SST initial)">Sauveteur Secouriste du Travail (SST initial) 190€ HT (Jour/Pers)</option>
-                                                    <option value="Formation et CACES Chariots 1, 3 et 5">Formation et CACES Chariots 1, 3 et 5 280€ HT (Jour/Pers)</option>
-                                                    <option value="Formation et CACES PEMP 1B & 3B">Formation et CACES PEMP 1B & 3B 240€ HT (Jour/Pers)</option>
-                                                    <option value="Echafaudages Roulants">Echafaudages Roulants 210€ HT (Jour/Pers)</option>
+                                                    <option value="Habilitation Electrique BS-BE Manoeuvre">Habilitation Electrique BS-BE Manoeuvre - 190€ HT (Jour/Pers)</option>
+                                                    <option value="Sauveteur Secouriste du Travail (SST initial)">Sauveteur Secouriste du Travail (SST initial) - 190€ HT (Jour/Pers)</option>
+                                                    <option value="Formation et CACES Chariots 1, 3 et 5">Formation et CACES Chariots 1, 3 et 5 - 280€ HT (Jour/Pers)</option>
+                                                    <option value="Formation et CACES PEMP 1B & 3B">Formation et CACES PEMP 1B & 3B - 240€ HT (Jour/Pers)</option>
+                                                    <option value="Echafaudages Roulants">Echafaudages Roulants - 210€ HT (Jour/Pers)</option>
                                                 </select>
                                             </div>
 
