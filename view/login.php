@@ -78,8 +78,8 @@
         <p>La procédure est expliquer dans le mail.</p>
         <div class="form-group">
             <div class="input-icon">
-                <i class="fa fa-envelope"></i>
-                <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Email" name="login" /> </div>
+                <i class="fa fa-user"></i>
+                <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Nom d'utilisateur" name="login" /> </div>
         </div>
         <div class="form-actions">
             <button type="button" id="back-btn" class="btn red btn-outline">Retour </button>
