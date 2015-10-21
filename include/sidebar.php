@@ -21,7 +21,7 @@
                 </li>
                 <li class="nav-item <?php if($_GET['view'] == 'demande'){echo "active open";} ?>">
                     <a href="index.php?view=demande" class="nav-link nav-toggle">
-                        <i class="icon-file"></i>
+                        <i class="fa fa-file"></i>
                         <span class="title">Demande</span>
                     </a>
                 </li>
