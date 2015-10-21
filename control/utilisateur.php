@@ -44,20 +44,20 @@ if(isset($_POST['action']) && $_POST['action'] == 'Connexion')
         {
             session_start();
             $_SESSION['login'] = $login;
-            header("Location: ../view/index.php?view=index");
+            header("Location: ../index.php?view=index");
             exit();
         }
         elseif($verif_account[0] == 0)
         {
-            header("Location: ../view/index.php?view=login&error=no_compte");
+            header("Location: ../index.php?view=login&error=no_compte");
         }
         else
         {
-            header("Location: ../view/index.php?view=login&error=bdd");
+            header("Location: ../index.php?view=login&error=bdd");
         }
     }
     else
     {
-        header("Location: ../view/index.php?view=login&error=champs");
+        header("Location: ../index.php?view=login&error=champs");
     }
 }
