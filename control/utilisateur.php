@@ -1,6 +1,5 @@
 <?php
-include "autre.php";
-use \autre;
+
 /**
  * Created by PhpStorm.
  * User: CRIDIP-SWD
@@ -65,6 +64,8 @@ if(isset($_POST['action']) && $_POST['action'] == 'Connexion')
 if(isset($_POST['action']) && $_POST['action'] == 'reinit-pass')
 {
     include "../include/config.php";
+    include "autre.php";
+    $autre = new autre();
     if(isset($_POST['login']) && !empty($_POST['login']))
     {
         $login = $_POST['login'];
@@ -75,7 +76,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'reinit-pass')
         {
             $sql_user = mysql_query("SELECT * FROM utilisateur WHERE login = '$login'")or die(mysql_error());
             $user = mysql_fetch_array($sql_user);
-            $email = $user['email'];
+            $email = $user['adresse_mail'];
             $autre = new autre();
             $new_pass = $autre->gen_password(5);
             echo $new_pass;
