@@ -1,4 +1,5 @@
 <?php
+include "autre.php";
 use \autre;
 /**
  * Created by PhpStorm.
