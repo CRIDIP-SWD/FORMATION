@@ -24,7 +24,7 @@
                     <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                     <li class="dropdown dropdown-user dropdown-dark">
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                            <span class="username username-hide-on-mobile"> <?= $info_user['nom_user']; ?> <?= $info_user['prenom_user']; ?></span>
+                            <span class="username username-hide-on-mobile"> <?= $info_user['nom_user']; ?> <?= $info_user['prenom_user']; ?><br><h6><i><?php if($info_user['type'] == 0){echo "Administrateur";}else{echo "Client";} ?></i></h6></span>
                             <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
                             <img alt="" class="img-circle" src="assets/layouts/layout4/img/avatar9.jpg" /> </a>
                         <ul class="dropdown-menu dropdown-menu-default">
