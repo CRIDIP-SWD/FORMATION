@@ -118,7 +118,7 @@ include "include/header.php";
                                                 <li class="active"><a href="#<?= $famille1['designation_famille']; ?>" data-toggle="tab"> <?= $famille1['designation_famille']; ?> </a></li>
                                                 <?php } ?>
                                                 <?php
-                                                $sql_famille = mysql_query("SELECT * FROM famille_catalogue LIMIT 2, 999")or die(mysql_error());
+                                                $sql_famille = mysql_query("SELECT * FROM famille_catalogue LIMIT 1, 999")or die(mysql_error());
                                                 while($famille = mysql_fetch_array($sql_famille))
                                                 {
                                                 ?>
