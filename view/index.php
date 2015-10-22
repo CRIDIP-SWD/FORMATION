@@ -99,7 +99,7 @@ include "include/header.php";
                                                 </div>
                                             </div>
                                             <div class="form-actions right">
-                                                <button type="submit" class="btn green" name="action" value="add-formation-inter"><i class="fa fa-check"></i> Envoyer la demande</button>
+                                                <button type="submit" class="btn green pull-right" name="action" value="add-formation-inter"><i class="fa fa-check"></i> Envoyer la demande</button>
                                             </div>
 
 
