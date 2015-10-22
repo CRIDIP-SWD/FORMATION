@@ -46,47 +46,53 @@
 <!-- BEGIN LOGIN -->
 <div class="content">
     <!-- BEGIN LOGIN FORM -->
-    <form class="login-form" action="<?= ROOT, CONTROL; ?>utilisateur.php" method="post">
-        <h3 class="form-title"><?= NOM_LOGICIEL; ?> - CONNEXION</h3>
-        <div class="form-group">
-            <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-            <label class="control-label visible-ie8 visible-ie9">Nom d'Utilisateur</label>
-            <div class="input-icon">
-                <i class="fa fa-user"></i>
-                <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Nom d'Utilisateur" name="login" /> </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label visible-ie8 visible-ie9">Mot de Passe</label>
-            <div class="input-icon">
-                <i class="fa fa-lock"></i>
-                <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Mot de Passe" name="password" /> </div>
-        </div>
-        <div class="form-actions">
-            <button type="submit" class="btn green pull-right" name="action" value="Connexion"> Connexion </button>
-        </div>
-        <div class="forget-password">
-            <h4>Mot de Passe perdu ?</h4>
-            <p> Cliquer
-                <a href="javascript:;" id="forget-password"> ici </a> pour réinitialiser le mot de passe. </p>
-        </div>
-    </form>
+    <?php if(!isset($_GET['sub'])){ ?>
+        <form class="login-form" action="<?= ROOT, CONTROL; ?>utilisateur.php" method="post">
+            <h3 class="form-title"><?= NOM_LOGICIEL; ?> - CONNEXION</h3>
+            <div class="form-group">
+                <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                <label class="control-label visible-ie8 visible-ie9">Nom d'Utilisateur</label>
+                <div class="input-icon">
+                    <i class="fa fa-user"></i>
+                    <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Nom d'Utilisateur" name="login" /> </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label visible-ie8 visible-ie9">Mot de Passe</label>
+                <div class="input-icon">
+                    <i class="fa fa-lock"></i>
+                    <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Mot de Passe" name="password" /> </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn green pull-right" name="action" value="Connexion"> Connexion </button>
+            </div>
+            <div class="forget-password">
+                <h4>Mot de Passe perdu ?</h4>
+                <p> Cliquer
+                    <a href="index.php?view=login&sub=reinit-pass"> ici </a> pour réinitialiser le mot de passe. </p>
+            </div>
+        </form>
+    <?php } ?>
     <!-- END LOGIN FORM -->
-    <!-- BEGIN FORGOT PASSWORD FORM -->
-    <form class="forget-form" action="<?= ROOT,CONTROL; ?>utilisateur.php" method="post">
-        <h3>Mot de passe Perdu ?</h3>
-        <p> Entrez votre nom d'utilisateur afin de réinitialiser votre mot de passe ? </p>
-        <p>La procédure est expliquer dans le mail.</p>
-        <div class="form-group">
-            <div class="input-icon">
-                <i class="fa fa-user"></i>
-                <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Nom d'utilisateur" name="login" /> </div>
-        </div>
-        <div class="form-actions">
-            <button type="button" id="back-btn" class="btn red btn-outline">Retour </button>
-            <button type="submit" class="btn green pull-right" name="action" value="reinit-pass"> Envoyer </button>
-        </div>
-    </form>
-    <!-- END FORGOT PASSWORD FORM -->
+    <?php if(isset($_GET['sub']) && $_GET['sub'] == 'reinit-pass'){ ?>
+
+        <!-- BEGIN FORGOT PASSWORD FORM -->
+        <form class="forget-form" action="<?= ROOT,CONTROL; ?>utilisateur.php" method="post">
+            <h3>Mot de passe Perdu ?</h3>
+            <p> Entrez votre nom d'utilisateur afin de réinitialiser votre mot de passe ? </p>
+            <p>La procédure est expliquer dans le mail.</p>
+            <div class="form-group">
+                <div class="input-icon">
+                    <i class="fa fa-user"></i>
+                    <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Nom d'utilisateur" name="login" /> </div>
+            </div>
+            <div class="form-actions">
+                <button type="button" id="back-btn" class="btn red btn-outline">Retour </button>
+                <button type="submit" class="btn green pull-right" name="action" value="reinit-pass"> Envoyer </button>
+            </div>
+        </form>
+        <!-- END FORGOT PASSWORD FORM -->
+
+    <?php } ?>
 </div>
 <!-- END LOGIN -->
 <link href="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-toastr/toastr.min.css" rel="stylesheet" type="text/css" />
