@@ -107,7 +107,50 @@ include "include/header.php";
                                         </form>
                                     </div>
                                     <div class="tab-pane fade" id="cat">
+                                        <h1>CATALOGUE DE FORMATION</h1>
+                                        <form action="<?= ROOT,CONTROL; ?>commande.php" method="post" role="form">
+                                            <ul class="nav nav-pills">
+                                                <li class="active"><a href="#securite" data-toggle="tab"> Sécurité </a></li>
+                                                <li><a href="#gpec" data-toggle="tab"> GPEC </a></li>
+                                                <li><a href="#anim" data-toggle="tab"> Animer-Diriger </a></li>
+                                                <li><a href="#langues" data-toggle="tab"> Langues </a></li>
+                                                <li><a href="#informatique" data-toggle="tab"> Informatique </a></li>
+                                                <li><a href="#net" data-toggle="tab"> Nettoyage Industriel </a></li>
+                                            </ul>
+                                            <div class="tab-content">
+                                                <div class="tab-pane fade active in" id="securite">
+                                                    <table class="table">
+                                                        <caption>CACES HAUTEUR / ENGINS</caption>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td>
+                                                                    <div class="form-group form-md-checkboxes">
+                                                                        <div class="md-checkbox-inline">
+                                                                            <div class="md-checkbox">
+                                                                                <input type="checkbox" name="choix[]" value="" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="tab-pane fade" id="tab_2_2">
+                                                    <p> Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft
+                                                        beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica
+                                                        VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
+                                                        stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park. </p>
+                                                </div>
 
+                                            </div>
+                                            <div class="form-action">
+                                                <button type="submit" class="btn green right" name="action" value="add-formation-catalogue"><i class="fa fa-check"></i> Valider</button>
+                                                <button type="reset" class="btn red right">Réinitialiser</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
