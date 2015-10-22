@@ -466,6 +466,11 @@ include "include/header.php";
 <script src="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-touchspin/bootstrap.touchspin.js" type="text/javascript"></script>
 <script src="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-toastr/toastr.min.js" type="text/javascript"></script>
 <script src="<?= ROOT,ASSETS,PLUGINS; ?>ckeditor/ckeditor.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-pwstrength/pwstrength-bootstrap.min.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>autosize/autosize.min.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>jquery-inputmask/jquery.inputmask.bundle.min.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>jquery.input-ip-address-control-1.0.min.js" type="text/javascript"></script>
 
 <script src="<?= ROOT,ASSETS,JS; ?>components-form-tools.min.js" type="text/javascript"></script>
 <script src="<?= ROOT,ASSETS,JS; ?>components-bootstrap-select.min.js" type="text/javascript"></script>
