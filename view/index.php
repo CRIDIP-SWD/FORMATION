@@ -150,7 +150,7 @@ include "include/header.php";
                                                             <tr>
                                                                 <td>(Réf.<?= $catalogue['ref_produit']; ?>)</td>
                                                                 <td><?= html_entity_decode($catalogue['designation_produit']); ?></td>
-                                                                <td>
+                                                                <td style="text-align: center;">
                                                                     <div class="form-group form-md-checkboxes">
                                                                         <div class="md-checkbox-inline">
                                                                             <div class="md-checkbox">
@@ -186,7 +186,7 @@ include "include/header.php";
                                                                 <tr>
                                                                     <td>(Réf.<?= $catalogue['ref_produit']; ?>)</td>
                                                                     <td><?= html_entity_decode($catalogue['designation_produit']); ?></td>
-                                                                    <td>
+                                                                    <td style="text-align: center;">
                                                                         <div class="form-group form-md-checkboxes">
                                                                             <div class="md-checkbox-inline">
                                                                                 <div class="md-checkbox">
