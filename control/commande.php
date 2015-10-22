@@ -194,12 +194,19 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-formation-catalogue')
                         </td>
                     </tr>
                     <tr>
-                        <td style="width: 50%;border-bottom: solid 1px; border-right: solid 1px; font-weight: bold;">Date Choisie:</td>
-                        <td style="width: 50%;border-bottom: solid 1px;"><?= $date_class->jour_semaine(date('N', $date_formation)); ?> <?= date('d', $date_formation); ?> <?= $date_class->mois(date('n', $date_formation)); ?> <?= date('Y', $date_formation); ?></td>
+                        <td style="width: 50%;border-bottom: solid 1px; border-right: solid 1px; font-weight: bold;">Période souhaité:</td>
+                        <td style="width: 50%;border-bottom: solid 1px;">Du <?= date("d-m-Y", $cmd['start_periode']); ?> au <?= date("d-m-Y", $cmd['end_periode']); ?></td>
                     </tr>
                     <tr>
                         <td style="width: 50%;border-bottom: solid 1px; border-right: solid 1px; font-weight: bold;">Nombre de Personne:</td>
                         <td style="width: 50%;border-bottom: solid 1px;"><?= $nb_personne; ?> Personnes</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 50%;border-bottom: solid 1px; border-right: solid 1px; font-weight: bold;">Précision sur les besoins:</td>
+                        <td style="width: 50%;border-bottom: solid 1px;"><?= html_entity_decode($cmd['besoin']); ?></td>
+                    </tr><tr>
+                        <td style="width: 50%; border-right: solid 1px; font-weight: bold;">Observation:</td>
+                        <td style="width: 50%;"><?= html_entity_decode($cmd['observation']); ?></td>
                     </tr>
                 </table><br><br>
                 Nous restons à votre disposition pour toutes informations complémentaires.<br><br>
