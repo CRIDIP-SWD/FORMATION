@@ -79,7 +79,7 @@
         <form class="forget-form" action="<?= ROOT,CONTROL; ?>utilisateur.php" method="post">
             <h3>Mot de passe Perdu ?</h3>
             <p> Entrez votre nom d'utilisateur afin de réinitialiser votre mot de passe ? </p>
-            <p>La procédures est expliquer dans le mail.</p>
+            <p>La procédure est expliquer dans le mail.</p>
             <div class="form-group">
                 <div class="input-icon">
                     <i class="fa fa-user"></i>
