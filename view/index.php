@@ -158,6 +158,7 @@ include "include/header.php";
                                                                                 <label for="checkbox6">
                                                                                     <span></span>
                                                                                     <span class="check"></span>
+                                                                                    <span class="box"></span>
                                                                                 </label>
                                                                             </div>
                                                                         </div>
