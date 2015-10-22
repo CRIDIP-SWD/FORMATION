@@ -132,7 +132,7 @@ include "include/header.php";
                                                 {
                                                     $idfamille1 = $famille1['idfamillecatalogue'];
                                                 ?>
-                                                <div class="tab-pane fade active in" id="securite">
+                                                <div class="tab-pane fade active in" id="<?= $famille1['designation_famille']; ?>">
                                                     <div class="row">
                                                         <div class="col-md-3 col-sm-3 col-xs-3">
                                                             <ul class="nav nav-tabs tabs-left">
@@ -261,7 +261,7 @@ include "include/header.php";
                                                 {
                                                     $idfamille = $famille['idfamillecatalogue'];
                                                     ?>
-                                                    <div class="tab-pane fade active in" id="securite">
+                                                    <div class="tab-pane fade active in" id="<?= $famille['designation_famille']; ?>">
                                                         <div class="row">
                                                             <div class="col-md-3 col-sm-3 col-xs-3">
                                                                 <ul class="nav nav-tabs tabs-left">
