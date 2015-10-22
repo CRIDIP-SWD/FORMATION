@@ -148,13 +148,13 @@ include "include/header.php";
                                                         {
                                                         ?>
                                                             <tr>
-                                                                <td></td>
-                                                                <td></td>
+                                                                <td>(Réf.<?= $catalogue['ref_produit']; ?>)</td>
+                                                                <td><?= html_entity_decode($catalogue['designation_produit']); ?></td>
                                                                 <td>
                                                                     <div class="form-group form-md-checkboxes">
                                                                         <div class="md-checkbox-inline">
                                                                             <div class="md-checkbox">
-                                                                                <input type="checkbox" name="choix[]" value="" />
+                                                                                <input type="checkbox" name="choix[]" value="<?= $catalogue['idproduit']; ?>" />
                                                                             </div>
                                                                         </div>
                                                                     </div>
