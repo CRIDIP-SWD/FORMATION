@@ -145,13 +145,17 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-formation-catalogue')
     $to = $mail .',';
     $to .= 'mmockelyn@cridip.com';
 
-    $sujet = "<".NOM_LOGICIEL."> Nouvelle Demande de formation INTER ENTREPRISE";
+    $sujet = "<".NOM_LOGICIEL."> Nouvelle Demande de formation sur CATALOGUE";
 
     ob_start();
     ?>
     <html>
     <head>
-
+        <style type="text/css">
+            body{
+                font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+            }
+        </style>
     </head>
     <body>
     <table style="width: 100%;">
@@ -161,7 +165,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-formation-catalogue')
     </table>
     <table style="width: 100%;">
         <tr>
-            <td style="text-align: left;"><strong>Objet:</strong> Nouvelle Demande de formation INTER ENTREPRISE</td>
+            <td style="text-align: left;"><strong>Objet:</strong> Nouvelle Demande de formation sur CATALOGUE</td>
         </tr>
     </table>
     <table>
