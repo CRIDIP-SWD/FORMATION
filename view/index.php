@@ -147,13 +147,13 @@ include "include/header.php";
                                                                 </li>
                                                                 <?php } ?>
                                                                 <?php
-                                                                $sql_sous_famille1 = mysql_query("SELECT * FROM sous_famille_catalogue WHERE idfamillecatalogue = '$idfamille1' LIMIT 1, 999")or die(mysql_error());
-                                                                while($sous_famille1 = mysql_fetch_array($sql_sous_famille1))
+                                                                $sql_sous_famille = mysql_query("SELECT * FROM sous_famille_catalogue WHERE idfamillecatalogue = '$idfamille1' LIMIT 1, 999")or die(mysql_error());
+                                                                while($sous_famille = mysql_fetch_array($sql_sous_famille))
                                                                 {
-                                                                $idsousfamille1 = $sous_famille1['idsousfamillecatalogue'];
+                                                                $idsousfamille = $sous_famille['idsousfamillecatalogue'];
                                                                 ?>
                                                                 <li>
-                                                                    <a href="#<?= $sous_famille1['idsousfamillecatalogue']; ?>" data-toggle="tab"> <?= $sous_famille1['designation_sous_famille']; ?> </a>
+                                                                    <a href="#<?= $sous_famille['idsousfamillecatalogue']; ?>" data-toggle="tab"> <?= $sous_famille['designation_sous_famille']; ?> </a>
                                                                 </li>
                                                                 <?php } ?>
                                                             </ul>
@@ -206,14 +206,14 @@ include "include/header.php";
                                                                 </div>
                                                                 <?php } ?>
                                                                 <?php
-                                                                $sql_sous_famille1 = mysql_query("SELECT * FROM sous_famille_catalogue WHERE idfamillecatalogue = '$idfamille1' LIMIT 1")or die(mysql_error());
-                                                                while($sous_famille1 = mysql_fetch_array($sql_sous_famille1))
+                                                                $sql_sous_famille = mysql_query("SELECT * FROM sous_famille_catalogue WHERE idfamillecatalogue = '$idfamille1' LIMIT 1")or die(mysql_error());
+                                                                while($sous_famille = mysql_fetch_array($sql_sous_famille))
                                                                 {
-                                                                $idsousfamille1 = $sous_famille1['idsousfamillecatalogue'];
+                                                                $idsousfamille = $sous_famille['idsousfamillecatalogue'];
                                                                 ?>
-                                                                <div class="tab-pane fade" id="<?= $sous_famille1['idsousfamillecatalogue']; ?>">
+                                                                <div class="tab-pane fade" id="<?= $sous_famille['idsousfamillecatalogue']; ?>">
                                                                     <table class="table table-bordered">
-                                                                        <caption><?= $sous_famille1['designation_sous_famille']; ?></caption>
+                                                                        <caption><?= $sous_famille['designation_sous_famille']; ?></caption>
                                                                         <thead>
                                                                         <tr>
                                                                             <th>Référence</th>
@@ -223,7 +223,7 @@ include "include/header.php";
                                                                         </thead>
                                                                         <tbody>
                                                                         <?php
-                                                                        $sql_catalogue = mysql_query("SELECT * FROM catalogue WHERE idsousfamillecatalogue = '$idsousfamille1' ORDER BY ref_produit ASC")or die(mysql_error());
+                                                                        $sql_catalogue = mysql_query("SELECT * FROM catalogue WHERE idsousfamillecatalogue = '$idsousfamille' ORDER BY ref_produit ASC")or die(mysql_error());
                                                                         while($catalogue = mysql_fetch_array($sql_catalogue))
                                                                         {
                                                                             ?>
