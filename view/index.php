@@ -393,14 +393,14 @@ include "include/header.php";
 
                                                 <div class="form-group">
                                                     <label class="control-label col-md-3">Nombre de Personne</label>
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-9">
                                                         <input id="touchspin_5" type="text" value="" name="nb_personne">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label class="control-label col-md-3">Période Souhaitée</label>
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-9">
                                                         <div class="input-group input-large date-picker input-daterange" data-date="<?= $date_jour; ?>" data-date-format="dd-mm-yyyy">
                                                             <input type="text" class="form-control" name="start">
                                                             <span class="input-group-addon"> au </span>
