@@ -409,6 +409,13 @@ include "include/header.php";
                                                     </div>
                                                 </div>
 
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Observation</label>
+                                                    <div class="col-md-9">
+                                                        <textarea class="ckeditor form-control" name="observation" rows="6"></textarea>
+                                                    </div>
+                                                </div>
+
                                             </div>
                                             <div class="form-action right">
                                                 <button type="submit" class="btn green right" name="action" value="add-formation-catalogue"><i class="fa fa-check"></i> Envoyer la demande</button>
