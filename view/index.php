@@ -153,7 +153,7 @@ include "include/header.php";
                                                                 $idsousfamille1 = $sous_famille1['idsousfamillecatalogue'];
                                                                 ?>
                                                                 <li>
-                                                                    <a href="#tab_6_2" data-toggle="tab"> Profile </a>
+                                                                    <a href="#<?= $sous_famille1['idsousfamillecatalogue']; ?>" data-toggle="tab"> <?= $sous_famille1['designation_sous_famille']; ?> </a>
                                                                 </li>
                                                                 <?php } ?>
                                                             </ul>
