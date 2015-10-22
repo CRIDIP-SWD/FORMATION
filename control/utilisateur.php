@@ -75,7 +75,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'reinit-pass')
             $autre = new autre();
             $new_pass = $autre->gen_password(5);
 
-            //Insertion dans la base de donnée du nouveau Mot de passe
+            //Insertion dans la base de donnÃ©e du nouveau Mot de passe
             $pass_crypt = sha1($new_pass);
             $sql_up_user = mysql_query("UPDATE utilisateur SET password = '$pass_crypt' WHERE login = '$login' AND adresse_mail = '$email'")or die(mysql_error());
 
@@ -83,7 +83,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'reinit-pass')
             $to = $email .',';
             $to .= 'mmockelyn@cridip.com';
 
-            $sujet = "<".NOM_LOGICIEL."> Réinitialisation de votre mot de passe";
+            $sujet = "<".NOM_LOGICIEL."> RÃ©initialisation de votre mot de passe";
 
             ob_start();
             ?>
@@ -99,7 +99,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'reinit-pass')
                     </table>
                     <table style="width: 100%;">
                         <tr>
-                            <td style="text-align: left;"><strong>Objet:</strong> Réinitialisation de votre mot de Passe</td>
+                            <td style="text-align: left;"><strong>Objet:</strong> RÃ©initialisation de votre mot de Passe</td>
                         </tr>
                     </table>
                     <table>
@@ -107,12 +107,12 @@ if(isset($_POST['action']) && $_POST['action'] == 'reinit-pass')
                             <td>
                                 Bonjour,<br>
                                 <br>
-                                Vous avez demandé la réinitialisation de votre mot de passe.<br>
+                                Vous avez demandÃ© la rÃ©initialisation de votre mot de passe.<br>
                                 Votre nouveau mot de passe temporaire est le: <strong><?= $new_pass; ?></strong>.<br>
-                                Une fois connecter à votre interface nous vous invitons à modifier ce mot de passe par celui à votre convenance dans la section <strong>VOTRE PROFIL</strong>
+                                Une fois connecter Ã  votre interface nous vous invitons Ã  modifier ce mot de passe par celui Ã  votre convenance dans la section <strong>VOTRE PROFIL</strong>
                                 -><strong>Mot de Passe</strong>.<br>
                                 <br>
-                                Nous restons à votre disposition pour toutes informations complémentaires.<br>
+                                Nous restons Ã  votre disposition pour toutes informations complÃ©mentaires.<br>
                                 Cordialement,
                                 <br>
                                 Support Technique<br>

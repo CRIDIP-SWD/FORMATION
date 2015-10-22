@@ -13,9 +13,11 @@
       <library name="PHARS">
         <CLASSES>
           <root url="phar://$MODULE_DIR$/composer.phar" />
+          <root url="phar://$MODULE_DIR$/directus/api/composer.phar" />
         </CLASSES>
         <SOURCES>
           <root url="phar://$MODULE_DIR$/composer.phar" />
+          <root url="phar://$MODULE_DIR$/directus/api/composer.phar" />
         </SOURCES>
       </library>
     </orderEntry>
