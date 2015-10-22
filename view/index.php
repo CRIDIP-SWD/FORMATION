@@ -147,7 +147,7 @@ include "include/header.php";
                                                                 </li>
                                                                 <?php } ?>
                                                                 <?php
-                                                                $sql_sous_famille = mysql_query("SELECT * FROM sous_famille_catalogue WHERE idfamillecatalogue = '$idfamille1' LIMIT 2, 999")or die(mysql_error());
+                                                                $sql_sous_famille = mysql_query("SELECT * FROM sous_famille_catalogue WHERE idfamillecatalogue = '$idfamille1' LIMIT 1, 999")or die(mysql_error());
                                                                 while($sous_famille = mysql_fetch_array($sql_sous_famille))
                                                                 {
                                                                 $idsousfamille = $sous_famille['idsousfamillecatalogue'];
@@ -206,7 +206,7 @@ include "include/header.php";
                                                                 </div>
                                                                 <?php } ?>
                                                                 <?php
-                                                                $sql_sous_famille = mysql_query("SELECT * FROM sous_famille_catalogue WHERE idfamillecatalogue = '$idfamille1' LIMIT 1")or die(mysql_error());
+                                                                $sql_sous_famille = mysql_query("SELECT * FROM sous_famille_catalogue WHERE idfamillecatalogue = '$idfamille1' LIMIT 1, 999")or die(mysql_error());
                                                                 while($sous_famille = mysql_fetch_array($sql_sous_famille))
                                                                 {
                                                                 $idsousfamille = $sous_famille['idsousfamillecatalogue'];
