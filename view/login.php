@@ -76,7 +76,7 @@
     <?php if(isset($_GET['sub']) && $_GET['sub'] == 'reinit-pass'){ ?>
 
         <!-- BEGIN FORGOT PASSWORD FORM -->
-        <form class="forget-form" action="<?= ROOT,CONTROL; ?>utilisateur.php" method="post">
+        <form action="<?= ROOT,CONTROL; ?>utilisateur.php" method="post">
             <h3>Mot de passe Perdu ?</h3>
             <p> Entrez votre nom d'utilisateur afin de réinitialiser votre mot de passe ? </p>
             <p>La procédure est expliquer dans le mail.</p>
@@ -86,7 +86,6 @@
                     <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Nom d'utilisateur" name="login" /> </div>
             </div>
             <div class="form-actions">
-                <button type="button" id="back-btn" class="btn red btn-outline">Retour </button>
                 <button type="submit" class="btn green pull-right" name="action" value="reinit-pass"> Envoyer </button>
             </div>
         </form>
