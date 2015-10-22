@@ -386,8 +386,8 @@ include "include/header.php";
                                                 <?php } ?>
 
                                             </div>
-                                            <div class="form-action">
-                                                <button type="submit" class="btn green right" name="action" value="add-formation-catalogue"><i class="fa fa-check"></i> Valider</button>
+                                            <div class="form-action right">
+                                                <button type="submit" class="btn green right" name="action" value="add-formation-catalogue"><i class="fa fa-check"></i> Envoyer la demande</button>
                                                 <button type="reset" class="btn red right">Réinitialiser</button>
                                             </div>
                                         </form>
