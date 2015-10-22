@@ -228,7 +228,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-formation-catalogue')
 
     $mail = mail($to, $sujet, $message, $headers);
 
-    if($sql_create_commande === TRUE)
+    if($sql_create_commande === TRUE AND $mail === TRUE)
     {
         header("Location: ../index.php?view=index&success=add-formation-catalogue");
     }else{
