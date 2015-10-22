@@ -395,7 +395,7 @@ include "include/header.php";
                                                 <div class="form-group">
                                                     <label class="control-label col-md-3">Nombre de Personne</label>
                                                     <div class="col-md-9">
-                                                        <input id="touchspin_5" type="text" value="" name="nb_personne">
+                                                        <input id="touchspin_6" type="text" value="" name="nb_personne">
                                                     </div>
                                                 </div>
 
