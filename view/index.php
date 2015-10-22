@@ -143,7 +143,7 @@ include "include/header.php";
                                                                     $idsousfamille1 = $sous_famille1['idsousfamillecatalogue'];
                                                                 ?>
                                                                 <li class="active">
-                                                                    <a href="#<?= $sous_famille1['designation_sous_famille']; ?>" data-toggle="tab"> <?= $sous_famille1['designation_sous_famille']; ?> </a>
+                                                                    <a href="#<?= $sous_famille1['idsousfamillecatalogue']; ?>" data-toggle="tab"> <?= $sous_famille1['designation_sous_famille']; ?> </a>
                                                                 </li>
                                                                 <?php } ?>
                                                                 <li>
@@ -159,7 +159,7 @@ include "include/header.php";
                                                                 {
                                                                 $idsousfamille1 = $sous_famille1['idsousfamillecatalogue'];
                                                                 ?>
-                                                                <div class="tab-pane active" id="<?= $sous_famille1['designation_sous_famille']; ?>">
+                                                                <div class="tab-pane active" id="<?= $sous_famille1['idsousfamillecatalogue']; ?>">
                                                                     <table class="table table-bordered">
                                                                         <caption><?= $sous_famille1['designation_sous_famille']; ?></caption>
                                                                         <thead>
