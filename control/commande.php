@@ -94,4 +94,11 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-formation-inter')
     $headers .= "To: no-reply <no-reply@clh>"."\r\n";
 
     $mail = mail($to, $sujet, $message, $headers);
+
+    if($sql_insert_cmd === TRUE AND $mail === TRUE)
+    {
+        header("Location: ../index.php?view=index&success=add-formation-inter");
+    }else{
+        header("Location: ../index.php?view=index&error=add-formation-inter");
+    }
 }

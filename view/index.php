@@ -139,8 +139,23 @@ include "include/header.php";
 <link href="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-touchspin/bootstrap.touchspin.css" rel="stylesheet" type="text/css" />
 <script src="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-touchspin/bootstrap.touchspin.js" type="text/javascript"></script>
 <script src="<?= ROOT,ASSETS,JS; ?>components-bootstrap-touchspin.min.js" type="text/javascript"></script>
+<link href="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-toastr/toastr.min.css" rel="stylesheet" type="text/css"/>
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-toastr/toastr.min.js" type="text/javascript"></script>
 <!-- BEGIN SCRIPT PAGE -->
-
+<?php if(isset($_GET['success']) && $_GET['success'] == 'add-formation-inter'){ ?>
+    <script type="text/javascript">
+        toastr.success("Votre demande à bien été pris en compte. Un responsable vous contactera bientôt afin de finaliser votre demande !", "DEMANDE DE FORMATION INTER ENTREPRISE",{
+            "positionClass": "toast-top-center"
+        })
+    </script>
+<?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'add-formation-inter'){ ?>
+    <script type="text/javascript">
+        toastr.error("Une erreur à eu lieu lors de votre demande.<br>Veuillez contacter l'administrateur système.", "DEMANDE DE FORMATION INTER ENTREPRISE",{
+            "positionClass": "toast-top-center"
+        })
+    </script>
+<?php } ?>
 <!-- END SCRIPT PAGE -->
 </body>
 
