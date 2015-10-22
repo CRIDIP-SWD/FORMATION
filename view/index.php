@@ -134,7 +134,7 @@ include "include/header.php";
                                                 ?>
                                                 <div class="tab-pane fade active in" id="securite">
                                                     <?php
-                                                    $sql_sous_famille1 = mysql_query("SELECT * FROM sous_famille_catalogue WHERE idfamillecatalogue = '$idfamille' LIMIT 1")or die(mysql_error());
+                                                    $sql_sous_famille1 = mysql_query("SELECT * FROM sous_famille_catalogue WHERE idfamillecatalogue = '$idfamille1' LIMIT 1")or die(mysql_error());
                                                     while($sous_famille1 = mysql_fetch_array($sql_sous_famille1))
                                                     {
                                                         $idsousfamille1 = $sous_famille1['idsousfamillecatalogue'];
