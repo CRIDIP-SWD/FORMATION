@@ -384,6 +384,30 @@ include "include/header.php";
                                                         </div>
                                                     </div>
                                                 <?php } ?>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Expliquez nous vos besoins ?</label>
+                                                    <div class="col-md-9">
+                                                        <textarea class="ckeditor form-control" name="besoin" rows="6"></textarea>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Nombre de Personne</label>
+                                                    <div class="col-md-4">
+                                                        <input id="touchspin_5" type="text" value="" name="nb_personne">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Période Souhaitée</label>
+                                                    <div class="col-md-4">
+                                                        <div class="input-group input-large date-picker input-daterange" data-date="<?= $date_jour; ?>" data-date-format="dd-mm-yyyy">
+                                                            <input type="text" class="form-control" name="start">
+                                                            <span class="input-group-addon"> au </span>
+                                                            <input type="text" class="form-control" name="end"> </div>
+                                                        <!-- /input-group -->
+                                                    </div>
+                                                </div>
 
                                             </div>
                                             <div class="form-action right">
@@ -411,18 +435,38 @@ include "include/header.php";
 </div>
 <!-- END CONTAINER -->
 <?php include "include/footer.php"; ?>
+
+
 <link href="<?= ROOT,ASSETS,PLUGINS; ?>select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+<link href="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
+<link href="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
+<link href="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet" type="text/css" />
+<link href="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
+<link href="<?= ROOT,ASSETS,PLUGINS; ?>clockface/css/clockface.css" rel="stylesheet" type="text/css" />
+<link href="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-toastr/toastr.min.css" rel="stylesheet" type="text/css"/>
+<link href="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-touchspin/bootstrap.touchspin.css" rel="stylesheet" type="text/css" />
 <link href="<?= ROOT,ASSETS,PLUGINS; ?>select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
-<script src="<?= ROOT,ASSETS,PLUGINS; ?>select2/js/select2.full.min.js" type="text/javascript"></script>
 <link href="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
+
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>select2/js/select2.full.min.js" type="text/javascript"></script>
 <script src="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-select/js/bootstrap-select.min.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-daterangepicker/moment.min.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-daterangepicker/daterangepicker.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-timepicker/js/bootstrap-timepicker.min.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>clockface/js/clockface.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-touchspin/bootstrap.touchspin.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-toastr/toastr.min.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>ckeditor/ckeditor.js" type="text/javascript"></script>
+
+<script src="<?= ROOT,ASSETS,JS; ?>components-form-tools.min.js" type="text/javascript"></script>
 <script src="<?= ROOT,ASSETS,JS; ?>components-bootstrap-select.min.js" type="text/javascript"></script>
 <script src="<?= ROOT,ASSETS,JS; ?>components-select2.min.js" type="text/javascript"></script>
-<link href="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-touchspin/bootstrap.touchspin.css" rel="stylesheet" type="text/css" />
-<script src="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-touchspin/bootstrap.touchspin.js" type="text/javascript"></script>
 <script src="<?= ROOT,ASSETS,JS; ?>components-bootstrap-touchspin.min.js" type="text/javascript"></script>
-<link href="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-toastr/toastr.min.css" rel="stylesheet" type="text/css"/>
-<script src="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-toastr/toastr.min.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,JS; ?>components-date-time-pickers.min.js" type="text/javascript"></script>
+
+
 <!-- BEGIN SCRIPT PAGE -->
 <?php if(isset($_GET['success']) && $_GET['success'] == 'add-formation-inter'){ ?>
     <script type="text/javascript">
