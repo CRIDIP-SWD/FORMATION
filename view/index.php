@@ -126,10 +126,27 @@ include "include/header.php";
                                                 <?php } ?>
                                             </ul>
                                             <div class="tab-content">
+                                                <?php
+                                                $sql_famille1 = mysql_query("SELECT * FROM famille_catalogue LIMIT 1")or die(mysql_error());
+                                                while($famille1 = mysql_fetch_array($sql_famille1))
+                                                {
+                                                    $idfamille1 = $famille1['idfamillecatalogue'];
+                                                ?>
                                                 <div class="tab-pane fade active in" id="securite">
+                                                    <?php
+                                                    $sql_sous_famille1 = mysql_query("SELECT * FROM sous_famille_catalogue WHERE idfamillecatalogue = '$idfamille' LIMIT 1")or die(mysql_error());
+                                                    while($sous_famille1 = mysql_fetch_array($sql_sous_famille1))
+                                                    {
+                                                        $idsousfamille1 = $sous_famille1['idsousfamillecatalogue'];
+                                                    ?>
                                                     <table class="table">
-                                                        <caption>CACES HAUTEUR / ENGINS</caption>
+                                                        <caption><?= $sous_famille1['designation_sous_famille']; ?></caption>
                                                         <tbody>
+                                                        <?php
+                                                        $sql_catalogue = mysql_query("SELECT * FROM catalogue WHERE idfamillecatalogue = '$idfamille1' AND idsousfamillecatalogue = '$idsousfamille1' ORDER BY ref_produit ASC")or die(mysql_error());
+                                                        while($catalogue = mysql_fetch_array($sql_catalogue))
+                                                        {
+                                                        ?>
                                                             <tr>
                                                                 <td></td>
                                                                 <td></td>
@@ -143,9 +160,12 @@ include "include/header.php";
                                                                     </div>
                                                                 </td>
                                                             </tr>
+                                                        <?php } ?>
                                                         </tbody>
                                                     </table>
+                                                    <?php } ?>
                                                 </div>
+                                                <?php } ?>
                                                 <div class="tab-pane fade" id="tab_2_2">
                                                     <p> Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft
                                                         beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica
