@@ -63,18 +63,28 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-formation-inter')
                 Bonjour,<br>
                 <br>
                 Enregistrement de la demande:<br>
-                <table style="width: 100%;">
+                <table style="width: 100%; border: solid 2px; border-radius: 5px;">
                     <tr>
-                        <td>Formation Concerné:</td>
-                        <td><?= $nom_theme; ?></td>
+                        <td style="width: 50%;border-bottom: solid 1px; border-right: solid 1px; font-weight: bold;">Client Concerné:</td>
+                        <td style="width: 50%;border-bottom: solid 1px;">
+                            <strong><?= $client['nom_societe']; ?></strong><br>
+                            <i><?= $contact['nom_contact']; ?> <?= $contact['prenom_contact']; ?></i><br>
+                            <strong>Tel:</strong> <?= $contact['tel_contact']; ?><br>
+                            <strong>Port:</strong> <?= $contact['port_contact']; ?><br>
+                            <strong>Mail:</strong> <?= $contact['mail_contact']; ?>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Date Choisie:</td>
-                        <td><?= $date_class->jour_semaine(date('N', $date_formation)); ?> <?= date('d', $date_formation); ?> <?= $date_class->mois(date('n', $date_formation)); ?> <?= date('Y', $date_formation); ?></td>
+                        <td style="width: 50%;border-bottom: solid 1px; border-right: solid 1px; font-weight: bold;">Formation Concerné:</td>
+                        <td style="width: 50%;border-bottom: solid 1px;"><?= $nom_theme; ?></td>
                     </tr>
                     <tr>
-                        <td>Nombre de Personne:</td>
-                        <td><?= $nb_personne; ?> Personnes</td>
+                        <td style="width: 50%;border-bottom: solid 1px; border-right: solid 1px; font-weight: bold;">Date Choisie:</td>
+                        <td style="width: 50%;border-bottom: solid 1px;"><?= $date_class->jour_semaine(date('N', $date_formation)); ?> <?= date('d', $date_formation); ?> <?= $date_class->mois(date('n', $date_formation)); ?> <?= date('Y', $date_formation); ?></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 50%;border-bottom: solid 1px; border-right: solid 1px; font-weight: bold;">Nombre de Personne:</td>
+                        <td style="width: 50%;border-bottom: solid 1px;"><?= $nb_personne; ?> Personnes</td>
                     </tr>
                 </table>
                 Nous restons à votre disposition pour toutes informations complémentaires.<br>
