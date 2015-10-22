@@ -69,7 +69,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-formation-inter')
                     </tr>
                     <tr>
                         <td>Date Choisie:</td>
-                        <td><?= $date_class->jour_semaine(date('N', $if['date_formation'])); ?> <?= date('d', $if['date_formation']); ?> <?= $date_class->mois(date('n', $if['date_formation'])); ?> <?= date('Y', $if['date_formation']); ?></td>
+                        <td><?= $date_class->jour_semaine(date('N', $date_formation); ?> <?= date('d', $date_formation); ?> <?= $date_class->mois(date('n', $date_formation); ?> <?= date('Y', $date_formation); ?></td>
                     </tr>
                     <tr>
                         <td>Nombre de Personne:</td>
