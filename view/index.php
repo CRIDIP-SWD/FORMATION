@@ -133,78 +133,80 @@ include "include/header.php";
                                                     $idfamille1 = $famille1['idfamillecatalogue'];
                                                 ?>
                                                 <div class="tab-pane fade active in" id="securite">
-                                                    <?php
-                                                    $sql_sous_famille1 = mysql_query("SELECT * FROM sous_famille_catalogue WHERE idfamillecatalogue = '$idfamille1' LIMIT 1")or die(mysql_error());
-                                                    while($sous_famille1 = mysql_fetch_array($sql_sous_famille1))
-                                                    {
-                                                        $idsousfamille1 = $sous_famille1['idsousfamillecatalogue'];
-                                                    ?>
-                                                    <table class="table">
-                                                        <caption><?= $sous_famille1['designation_sous_famille']; ?></caption>
-                                                        <tbody>
-                                                        <?php
-                                                        $sql_catalogue = mysql_query("SELECT * FROM catalogue WHERE catalogue.idsousfamillecatalogue = '$idsousfamille1'  ORDER BY ref_produit ASC")or die(mysql_error());
-                                                        while($catalogue = mysql_fetch_array($sql_catalogue))
-                                                        {
-                                                        ?>
-                                                            <tr>
-                                                                <td>(Réf.<?= $catalogue['ref_produit']; ?>)</td>
-                                                                <td><?= html_entity_decode($catalogue['designation_produit']); ?></td>
-                                                                <td style="text-align: center;">
-                                                                    <div class="form-group form-md-checkboxes">
-                                                                        <div class="md-checkbox-inline">
-                                                                            <div class="md-checkbox">
-                                                                                <input type="checkbox" id="checkbox<?= $catalogue['idproduit']; ?>" name="choix[]" value="<?= $catalogue['idproduit']; ?>" class="md-check">
-                                                                                <label for="checkbox<?= $catalogue['idproduit']; ?>">
-                                                                                    <span></span>
-                                                                                    <span class="check"></span>
-                                                                                    <span class="box"></span>
-                                                                                </label>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                        <?php } ?>
-                                                        </tbody>
-                                                    </table>
-                                                    <?php } ?>
-                                                    <?php
-                                                    $sql_sous_famille = mysql_query("SELECT * FROM sous_famille_catalogue WHERE idfamillecatalogue = '$idfamille1' LIMIT 1,999")or die(mysql_error());
-                                                    while($sous_famille = mysql_fetch_array($sql_sous_famille))
-                                                    {
-                                                        $idsousfamille = $sous_famille['idsousfamillecatalogue'];
-                                                        ?>
-                                                        <table class="table">
-                                                            <caption><?= $sous_famille['designation_sous_famille']; ?></caption>
-                                                            <tbody>
-                                                            <?php
-                                                            $sql_catalogue = mysql_query("SELECT * FROM catalogue WHERE catalogue.idsousfamillecatalogue = '$idsousfamille'  ORDER BY ref_produit ASC")or die(mysql_error());
-                                                            while($catalogue = mysql_fetch_array($sql_catalogue))
-                                                            {
+                                                    <div class="row">
+                                                        <div class="col-md-3 col-sm-3 col-xs-3">
+                                                            <ul class="nav nav-tabs tabs-left">
+                                                                <?php
+                                                                $sql_sous_famille1 = mysql_query("SELECT * FROM sous_famille_catalogue WHERE idfamillecatalogue = '$idfamille1' LIMIT 1")or die(mysql_error());
+                                                                while($sous_famille1 = mysql_fetch_array($sql_sous_famille1))
+                                                                {
+                                                                    $idsousfamille1 = $sous_famille1['idsousfamillecatalogue'];
                                                                 ?>
-                                                                <tr>
-                                                                    <td>(Réf.<?= $catalogue['ref_produit']; ?>)</td>
-                                                                    <td><?= html_entity_decode($catalogue['designation_produit']); ?></td>
-                                                                    <td style="text-align: center;">
-                                                                        <div class="form-group form-md-checkboxes">
-                                                                            <div class="md-checkbox-inline">
-                                                                                <div class="md-checkbox">
-                                                                                    <input type="checkbox" id="checkbox<?= $catalogue['idproduit']; ?>" name="choix[]" value="<?= $catalogue['idproduit']; ?>" class="md-check">
-                                                                                    <label for="checkbox<?= $catalogue['idproduit']; ?>">
-                                                                                        <span></span>
-                                                                                        <span class="check"></span>
-                                                                                        <span class="box"></span>
-                                                                                    </label>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                            <?php } ?>
-                                                            </tbody>
-                                                        </table>
-                                                    <?php } ?>
+                                                                <li class="active">
+                                                                    <a href="#<?= $sous_famille1['designation_sous_famille']; ?>" data-toggle="tab"> <?= $sous_famille1['designation_sous_famille']; ?> </a>
+                                                                </li>
+                                                                <?php } ?>
+                                                                <li>
+                                                                    <a href="#tab_6_2" data-toggle="tab"> Profile </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-md-9 col-sm-9 col-xs-9">
+                                                            <div class="tab-content">
+                                                                <?php
+                                                                $sql_sous_famille1 = mysql_query("SELECT * FROM sous_famille_catalogue WHERE idfamillecatalogue = '$idfamille1' LIMIT 1")or die(mysql_error());
+                                                                while($sous_famille1 = mysql_fetch_array($sql_sous_famille1))
+                                                                {
+                                                                $idsousfamille1 = $sous_famille1['idsousfamillecatalogue'];
+                                                                ?>
+                                                                <div class="tab-pane active" id="<?= $sous_famille1['designation_sous_famille']; ?>">
+                                                                    <table class="table table-bordered">
+                                                                        <caption><?= $sous_famille1['designation_sous_famille']; ?></caption>
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Référence</th>
+                                                                                <th>Formation</th>
+                                                                                <th></th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                        <?php
+                                                                        $sql_catalogue = mysql_query("SELECT * FROM catalogue WHERE idsousfamillecatalogue = '$idsousfamille1' ORDER BY ref_produit ASC")or die(mysql_error());
+                                                                        while($catalogue = mysql_fetch_array($sql_catalogue))
+                                                                        {
+                                                                        ?>
+                                                                            <tr>
+                                                                                <td>(Réf. <?= $catalogue['ref_produit']; ?></td>
+                                                                                <td><?= html_entity_decode($catalogue['designation_produit']); ?></td>
+                                                                                <td>
+                                                                                    <div class="form-group form-md-checkboxes">
+                                                                                        <div class="md-checkbox-inline">
+                                                                                            <div class="md-checkbox">
+                                                                                                <input type="checkbox" id="checkbox<?= $catalogue['idproduit']; ?>" name="choix[]" value="<?= $catalogue['idproduit']; ?>" class="md-check">
+                                                                                                <label for="checkbox<?= $catalogue['idproduit']; ?>">
+                                                                                                    <span></span>
+                                                                                                    <span class="check"></span>
+                                                                                                    <span class="box"></span>
+                                                                                                </label>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        <?php } ?>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                                <?php } ?>
+                                                                <div class="tab-pane fade" id="tab_6_2">
+                                                                    <p> Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table
+                                                                        craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.
+                                                                        Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel.
+                                                                        Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park. </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <?php } ?>
                                                 <div class="tab-pane fade" id="tab_2_2">
