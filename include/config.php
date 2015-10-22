@@ -84,9 +84,9 @@ function nom_page($page)
 
 class database{
     public $host = "localhost";
-    public $user = "root";
+    public $user = "formations";
     public $pass = "1992maxime";
-    public $base = "formation";
+    public $base = "formations";
 
     public function __construct()
     {
