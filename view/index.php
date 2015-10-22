@@ -155,7 +155,7 @@ include "include/header.php";
                                                                         <div class="md-checkbox-inline">
                                                                             <div class="md-checkbox">
                                                                                 <input type="checkbox" id="checkbox<?= $catalogue['idproduit']; ?>" name="choix[]" value="<?= $catalogue['idproduit']; ?>" class="md-check">
-                                                                                <label for="checkbox6">
+                                                                                <label for="checkbox<?= $catalogue['idproduit']; ?>">
                                                                                     <span></span>
                                                                                     <span class="check"></span>
                                                                                     <span class="box"></span>
