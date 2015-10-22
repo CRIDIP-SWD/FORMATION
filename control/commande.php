@@ -62,7 +62,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-formation-inter')
             <td>
                 Bonjour,<br>
                 <br>
-                Enregistrement de la demande:<br>
+                Enregistrement de la demande:<br />
                 <table style="width: 100%; border: solid 2px; border-radius: 5px;">
                     <tr>
                         <td style="width: 50%;border-bottom: solid 1px; border-right: solid 1px; font-weight: bold;">Client Concerné:</td>
@@ -86,9 +86,9 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-formation-inter')
                         <td style="width: 50%;border-bottom: solid 1px; border-right: solid 1px; font-weight: bold;">Nombre de Personne:</td>
                         <td style="width: 50%;border-bottom: solid 1px;"><?= $nb_personne; ?> Personnes</td>
                     </tr>
-                </table>
-                Nous restons à votre disposition pour toutes informations complémentaires.<br>
-                Cordialement,
+                </table><br><br>
+                Nous restons à votre disposition pour toutes informations complémentaires.<br><br>
+                Cordialement,<br>
                 <br>
                 Support Technique<br>
                 <i><?= NOM_LOGICIEL; ?></i>
