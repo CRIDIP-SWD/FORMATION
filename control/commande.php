@@ -14,16 +14,17 @@ class commande
 if(isset($_POST['action']) && $_POST['action'] == 'add-formation-inter')
 {
     include "../include/config.php";
-    $idclient       = $_POST['idclient'];
     $idcontact      = $_POST['idcontact'];
     $theme          = $_POST['theme'];
     $nb_personne    = $_POST['nb_personne'];
 
-    $sql_client = mysql_query("SELECT * FROM client WHERE idclient = '$idclient'")or die(mysql_error());
-    $client = mysql_fetch_array($sql_client);
     $sql_contact = mysql_query("SELECT * FROM contact WHERE idcontact = '$idcontact'")or die(mysql_error());
     $contact = mysql_fetch_array($sql_contact);
     $mail = $contact['mail_contact'];
+    $idclient = $contact['idclient'];
+    $sql_client = mysql_query("SELECT * FROM client WHERE idclient = '$idclient'")or die(mysql_error());
+    $client = mysql_fetch_array($sql_client);
+
     $sql_inter = mysql_query("SELECT * FROM inter_calendar_formation WHERE idformation = '$theme'")or die(mysql_error());
     $inter = mysql_fetch_array($sql_inter);
     $nom_theme = $inter['theme'];

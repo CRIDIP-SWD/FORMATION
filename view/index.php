@@ -68,7 +68,6 @@ include "include/header.php";
                                     <div class="tab-pane fade active in" id="ie">
                                         <h1>FORMATION INTER ENTREPRISE - SECURITE</h1>
                                         <form class="form-horizontal" action="<?= ROOT,CONTROL; ?>commande.php" method="POST">
-                                            <input type="hidden" name="idclient" value="<?= $info_user['idclient']; ?>" />
                                             <input type="hidden" name="idcontact" value="<?= $info_user['idcontact']; ?>" />
                                             <div class="form-body">
                                                 <div class="form-group">
