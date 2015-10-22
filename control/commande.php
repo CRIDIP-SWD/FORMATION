@@ -188,7 +188,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-formation-catalogue')
                             $sql_ligne = mysql_query("SELECT * FROM ligne_commande_catalogue, catalogue WHERE ligne_commande_catalogue.idproduit = catalogue.idproduit AND idcommande = '$idcommande'")or die(mysql_error());
                             while($ligne = mysql_fetch_array($sql_ligne))
                             {
-                                echo "(Réf.".$ligne['ref_produit'].") ".$ligne['designation_produit'];
+                                echo "(Réf.".$ligne['ref_produit'].") ".$ligne['designation_produit']."<br>";
                             }
                             ?>
                         </td>
