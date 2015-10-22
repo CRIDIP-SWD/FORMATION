@@ -110,12 +110,20 @@ include "include/header.php";
                                         <h1>CATALOGUE DE FORMATION</h1>
                                         <form action="<?= ROOT,CONTROL; ?>commande.php" method="post" role="form">
                                             <ul class="nav nav-pills">
-                                                <li class="active"><a href="#securite" data-toggle="tab"> Sécurité </a></li>
-                                                <li><a href="#gpec" data-toggle="tab"> GPEC </a></li>
-                                                <li><a href="#anim" data-toggle="tab"> Animer-Diriger </a></li>
-                                                <li><a href="#langues" data-toggle="tab"> Langues </a></li>
-                                                <li><a href="#informatique" data-toggle="tab"> Informatique </a></li>
-                                                <li><a href="#net" data-toggle="tab"> Nettoyage Industriel </a></li>
+                                                <?php
+                                                $sql_famille1 = mysql_query("SELECT * FROM famille_catalogue LIMIT 1")or die(mysql_error());
+                                                while($famille1 = mysql_fetch_array($sql_famille1))
+                                                {
+                                                ?>
+                                                <li class="active"><a href="#<?= $famille1['designation_famille']; ?>" data-toggle="tab"> <?= $famille1['designation_famille']; ?> </a></li>
+                                                <?php } ?>
+                                                <?php
+                                                $sql_famille = mysql_query("SELECT * FROM famille_catalogue LIMIT 2, 999")or die(mysql_error());
+                                                while($famille = mysql_fetch_array($sql_famille))
+                                                {
+                                                ?>
+                                                <li><a href="#<?= $famille['designation_famille']; ?>" data-toggle="tab"> <?= $famille['designation_famille']; ?> </a></li>
+                                                <?php } ?>
                                             </ul>
                                             <div class="tab-content">
                                                 <div class="tab-pane fade active in" id="securite">
