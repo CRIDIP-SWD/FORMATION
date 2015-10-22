@@ -68,33 +68,38 @@ include "include/header.php";
                                     <div class="tab-pane fade active in" id="ie">
                                         <h1>FORMATION INTER ENTREPRISE - SECURITE</h1>
                                         <form class="form-horizontal" action="<?= ROOT,CONTROL; ?>commande.php" method="POST">
-                                            <div class="form-group">
-                                                <label for="single" class="control-label col-md-3">Selectionner le Thème de la Formation</label>
-                                                <div class="col-md-9">
-                                                    <select id="single" name="theme" class="form-control bs-select" data-show-subtext="true">
-                                                        <option></option>
-                                                        <?php
-                                                        $sql_inter_formation = mysql_query("SELECT * FROM inter_calendar_formation ORDER BY date_formation ASC")or die(mysql_error());
-                                                        while($if = mysql_fetch_array($sql_inter_formation))
-                                                        {
+                                            <div class="form-body">
+                                                <div class="form-group">
+                                                    <label for="single" class="control-label col-md-3">Selectionner le Thème de la Formation</label>
+                                                    <div class="col-md-9">
+                                                        <select id="single" name="theme" class="form-control bs-select" data-show-subtext="true">
+                                                            <option></option>
+                                                            <?php
+                                                            $sql_inter_formation = mysql_query("SELECT * FROM inter_calendar_formation ORDER BY date_formation ASC")or die(mysql_error());
+                                                            while($if = mysql_fetch_array($sql_inter_formation))
+                                                            {
 
-                                                            ?>
-                                                            <option value="<?= $if['idformation']; ?>" data-content="<?= $if['theme']; ?> du <strong><?= $date_class->jour_semaine(date('N', $if['date_formation'])); ?> <?= date('d', $if['date_formation']); ?> <?= $date_class->mois(date('n', $if['date_formation'])); ?> <?= date('Y', $if['date_formation']); ?></strong> - <?= number_format($if['prix'], 2, ',', ' ')." €"; ?> - <?= $if['duree']; ?>"></option>
-                                                        <?php } ?>
-                                                    </select>
-                                                    <p>
-                                                        <strong>Octobre:</strong> Nous consulter pour la formation <strong>ECHAFAUDAGE ROULANT</strong><br>
-                                                        <strong>Décembre:</strong> Nous consulter pour la formation <strong>ECHAFAUDAGE ROULANT</strong>
-                                                    </p>
+                                                                ?>
+                                                                <option value="<?= $if['idformation']; ?>" data-content="<?= $if['theme']; ?> du <strong><?= $date_class->jour_semaine(date('N', $if['date_formation'])); ?> <?= date('d', $if['date_formation']); ?> <?= $date_class->mois(date('n', $if['date_formation'])); ?> <?= date('Y', $if['date_formation']); ?></strong> - <?= number_format($if['prix'], 2, ',', ' ')." €"; ?> - <?= $if['duree']; ?>"></option>
+                                                            <?php } ?>
+                                                        </select>
+                                                        <p>
+                                                            <strong>Octobre:</strong> Nous consulter pour la formation <strong>ECHAFAUDAGE ROULANT</strong><br>
+                                                            <strong>Décembre:</strong> Nous consulter pour la formation <strong>ECHAFAUDAGE ROULANT</strong>
+                                                        </p>
+                                                    </div>
+
                                                 </div>
 
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Nombre de Personne</label>
+                                                    <div class="col-md-4">
+                                                        <input id="touchspin_5" type="text" value="" name="nb_personne">
+                                                    </div>
+                                                </div>
                                             </div>
-
-                                            <div class="form-group">
-                                                <label class="control-label col-md-3">Nombre de Personne</label>
-                                                <div class="col-md-4">
-                                                    <input id="touchspin_5" type="text" value="" name="nb_personne">
-                                                </div>
+                                            <div class="form-actions right">
+                                                <button type="submit" class="btn green" name="action" value="add-formation-inter"><i class="fa fa-check"></i> Envoyer la demande</button>
                                             </div>
 
 
