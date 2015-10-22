@@ -143,7 +143,7 @@ include "include/header.php";
                                                         <caption><?= $sous_famille1['designation_sous_famille']; ?></caption>
                                                         <tbody>
                                                         <?php
-                                                        $sql_catalogue = mysql_query("SELECT * FROM catalogue WHERE idfamillecatalogue = '$idfamille1' AND idsousfamillecatalogue = '$idsousfamille1' ORDER BY ref_produit ASC")or die(mysql_error());
+                                                        $sql_catalogue = mysql_query("SELECT * FROM catalogue WHERE catalogue.idsousfamillecatalogue = '$idsousfamille1'  ORDER BY ref_produit ASC")or die(mysql_error());
                                                         while($catalogue = mysql_fetch_array($sql_catalogue))
                                                         {
                                                         ?>
