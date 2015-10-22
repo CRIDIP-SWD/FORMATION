@@ -384,6 +384,7 @@ include "include/header.php";
                                                         </div>
                                                     </div>
                                                 <?php } ?>
+
                                                 <div class="form-group">
                                                     <label class="control-label col-md-3">Expliquez nous vos besoins ?</label>
                                                     <div class="col-md-9">
@@ -415,6 +416,7 @@ include "include/header.php";
                                                         <textarea class="ckeditor form-control" name="observation" rows="6"></textarea>
                                                     </div>
                                                 </div>
+                                                <input type="hidden" name="idcontact" value="<?= $info_user['idcontact']; ?>" />
 
                                             </div>
                                             <div class="form-action right">
@@ -487,9 +489,23 @@ include "include/header.php";
         })
     </script>
 <?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'add-formation-catalogue'){ ?>
+    <script type="text/javascript">
+        toastr.success("Votre demande à bien été pris en compte. Un responsable vous contactera bientôt afin de finaliser votre demande !", "DEMANDE DE FORMATION SUR CATALOGUE",{
+            "positionClass": "toast-top-center"
+        })
+    </script>
+<?php } ?>
 <?php if(isset($_GET['error']) && $_GET['error'] == 'add-formation-inter'){ ?>
     <script type="text/javascript">
         toastr.error("Une erreur à eu lieu lors de votre demande.<br>Veuillez contacter l'administrateur système.", "DEMANDE DE FORMATION INTER ENTREPRISE",{
+            "positionClass": "toast-top-center"
+        })
+    </script>
+<?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'add-formation-catalogue'){ ?>
+    <script type="text/javascript">
+        toastr.error("Une erreur à eu lieu lors de votre demande.<br>Veuillez contacter l'administrateur système.", "DEMANDE DE FORMATION SUR CATALOGUE",{
             "positionClass": "toast-top-center"
         })
     </script>

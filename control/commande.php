@@ -113,3 +113,40 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-formation-inter')
         header("Location: ../index.php?view=index&error=add-formation-inter");
     }
 }
+if(isset($_POST['action']) && $_POST['action'] == 'add-formation-catalogue')
+{
+    include "../include/config.php";
+    $idcontact = $_POST['idcontact'];
+    $besoin = htmlentities(addslashes($_POST['besoin']));
+    $nb_personne = $_POST['nb_personne'];
+    $start = strtotime($_POST['start']);
+    $end = strtotime($_POST['end']);
+    $observation = htmlentities(addslashes($_POST['observation']));
+
+    $sql_contact = mysql_query("SELECT * FROM contact WHERE idcontact = '$idcontact'")or die(mysql_error());
+    $contact = mysql_fetch_array($sql_contact);
+    $mail = $contact['mail_contact'];
+    $idclient = $contact['idclient'];
+    $sql_client = mysql_query("SELECT * FROM client WHERE idclient = '$idclient'")or die(mysql_error());
+    $client = mysql_fetch_array($sql_client);
+
+    $sql_create_commande = mysql_query("INSERT INTO `commande_catalogue`(`idcommande`, `idclient`, `besoin`, `nb_personne`, `start_periode`, `end_periode`, `observation`)
+                                      VALUES (NULL,'$idclient','$besoin','$nb_personne','$start','$end','$observation')")or die(mysql_error());
+
+    $sql_commande = mysql_query("SELECT * FROM commande_catalogue WHERE idclient = '$idclient'AND nb_personne = '$nb_personne' AND start_periode = '$start' AND end_periode = '$end'")or die(mysql_error());
+    $cmd = mysql_fetch_array($sql_commande);
+    $idcommande = $cmd['idcommande'];
+
+    foreach ($_POST['choix'] as $valeur) {
+        mysql_query("INSERT INTO `ligne_commande_catalogue`(`idligne`, `idcommande`, `idproduit`) VALUES (NULL,'$idcommande','$valeur')")or die(mysql_error());
+    }
+
+    if($sql_create_commande === TRUE)
+    {
+        header("Location: ../index.php?view=index&success=add-formation-catalogue");
+    }else{
+        header("Location: ../index.php?view=index&error=add-formation-catalogue");
+    }
+
+
+}
