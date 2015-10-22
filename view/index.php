@@ -154,7 +154,7 @@ include "include/header.php";
                                                                     <div class="form-group form-md-checkboxes">
                                                                         <div class="md-checkbox-inline">
                                                                             <div class="md-checkbox">
-                                                                                <input type="checkbox" name="choix[]" value="<?= $catalogue['idproduit']; ?>" />
+                                                                                <input type="checkbox" name="choix[]" class="md-check" value="<?= $catalogue['idproduit']; ?>" />
                                                                             </div>
                                                                         </div>
                                                                     </div>
