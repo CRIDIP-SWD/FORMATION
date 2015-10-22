@@ -32,7 +32,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-formation-inter')
     $sql_insert_cmd = mysql_query("INSERT INTO `commande_inter`(`idcommande`, `idclient`, `theme`, `date_choisie`, `nb_personne`)
                                   VALUES (NULL,'$idclient','$theme','$date_formation','$nb_personne')")or die(mysql_error());
 
-    //Mail vers le Système
+    //Mail vers le SystÃ¨me
 
     $to = $mail .',';
     $to .= 'mmockelyn@cridip.com';
@@ -64,7 +64,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-formation-inter')
                 Enregistrement de la demande:<br>
                 <table style="width: 100%;">
                     <tr>
-                        <td>Formation Concerné:</td>
+                        <td>Formation ConcernÃ©:</td>
                         <td><?= $nom_theme; ?></td>
                     </tr>
                     <tr>
@@ -76,7 +76,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-formation-inter')
                         <td><?= $nb_personne; ?> Personnes</td>
                     </tr>
                 </table>
-                Nous restons à votre disposition pour toutes informations complémentaires.<br>
+                Nous restons Ã  votre disposition pour toutes informations complÃ©mentaires.<br>
                 Cordialement,
                 <br>
                 Support Technique<br>
