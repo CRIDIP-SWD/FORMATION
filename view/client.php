@@ -363,6 +363,30 @@ include "include/header.php";
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1" class="col-md-2 control-label">Inline Radios</label>
+                                                    <div class="col-md-10">
+                                                        <div class="md-radio-inline">
+                                                            <div class="md-radio">
+                                                                <input type="radio" value="1" class="md-radiobtn" name="access_portail" id="radio53">
+                                                                <label for="radio53">
+                                                                    <span></span>
+                                                                    <span class="check"></span>
+                                                                    <span class="box"></span> Oui
+                                                                </label>
+                                                            </div>
+                                                            <div class="md-radio">
+                                                                <input type="radio" checked="" value="0" class="md-radiobtn" name="access_portail" id="radio54">
+                                                                <label for="radio54">
+                                                                    <span></span>
+                                                                    <span class="check"></span>
+                                                                    <span class="box"></span> Non
+                                                                </label>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn dark btn-outline" data-dismiss="modal">Fermer</button>

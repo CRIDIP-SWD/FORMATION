@@ -92,3 +92,6 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-client-control')
         header("Location: ../index.php?view=client&error=supp-client");
     }
 }
+if(isset($_POST['action']) && $_POST['action'] == 'add-contact-control'){
+    include "../include/config.php";
+}
