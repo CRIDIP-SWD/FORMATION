@@ -119,6 +119,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-contact-control'){
             header("Location: ../index.php?view=client&sub=view-client&idclient=$idclient&error=add-contact");
         }
     }else{
+        $login = $_POST['login'];
         $pass_gen_clear = $cl_class->generate_password(8);
         $pass_crypt = sha1($pass_gen_clear);
 
@@ -130,7 +131,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-contact-control'){
         $idcontact = $contact['idcontact'];
 
         $sql_add_login = mysql_query("INSERT INTO `utilisateur`(`iduser`, `login`, `password`, `idcontact`, `nom_user`, `type`, `prenom_user`, `adresse_mail`)
-                                VALUES (NULL,'$mail_contact','$pass_crypt','$idcontact','$nom_contact','1','$prenom_contact','$mail_contact')")or die(mysql_error());
+                                VALUES (NULL,'$login','$pass_crypt','$idcontact','$nom_contact','1','$prenom_contact','$mail_contact')")or die(mysql_error());
 
         if($sql_add_contact === TRUE AND $sql_add_login === TRUE)
         {
@@ -140,4 +141,8 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-contact-control'){
         }
     }
 
+}
+if(isset($_GET['action']) && $_GET['action'] == 'supp-contact-control'){
+    include "../include/config.php";
+    $idclient = $_GET['idclient'];
 }
