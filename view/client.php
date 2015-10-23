@@ -129,36 +129,41 @@ include "include/header.php";
                             <div class="portlet-title">
                                 <div class="caption font-dark">
                                     <i class="icon-settings font-dark"></i>
-                                    <span class="caption-subject bold uppercase">Header Fixed</span>
-                                </div>
-                                <div class="actions">
-                                    <div class="btn-group btn-group-devided" data-toggle="buttons">
-                                        <label class="btn btn-transparent dark btn-outline btn-circle btn-sm active">
-                                            <input type="radio" name="options" class="toggle" id="option1">Actions</label>
-                                        <label class="btn btn-transparent dark btn-outline btn-circle btn-sm">
-                                            <input type="radio" name="options" class="toggle" id="option2">Settings</label>
-                                    </div>
+                                    <span class="caption-subject bold uppercase">Liste des contacts</span>
                                 </div>
                             </div>
                             <div class="portlet-body">
                                 <table class="table table-striped table-bordered table-hover table-header-fixed" id="sample_1">
                                     <thead>
                                         <tr class="">
-                                            <th> Rendering engine </th>
-                                            <th> Browser </th>
-                                            <th> Platform(s) </th>
-                                            <th> Engine version </th>
-                                            <th> CSS grade </th>
+                                            <th> Identité </th>
+                                            <th> Coordonnée </th>
+                                            <th> Identifiant plateforme </th>
+                                            <th>  </th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php
+                                    $sql_contact = mysql_query("SELECT * FROM contact, utilisateur WHERE contact.idcontact = utilisateur.idcontact AND idclient = '$idclient'")or die(mysql_error());
+                                    while($contact = mysql_fetch_array($sql_contact))
+                                    {
+                                    ?>
                                         <tr>
-                                            <td> Trident </td>
-                                            <td> Internet Explorer 4.0 </td>
+                                            <td>
+                                                <strong><?= $client['nom_societe']; ?></strong><br>
+                                                <?= $contact['nom_contact']; ?> <?= $contact['prenom_contact']; ?>
+                                            </td>
+                                            <td>
+                                                <strong><i class="fa fa-phone"></i>Tél:</strong> <?= $contact['tel_contact']; ?><br>
+                                                <strong><i class="fa fa-mobile-phone"></i> Port:</strong> <?= $contact['port_contact']; ?><br>
+                                                <strong><i class="fa fa-envelope"></i> Mail:</strong> <?= $contact['mail_contact']; ?><br>
+                                                <strong><i class="fa fa-skype"></i> Skype:</strong> <?= $contact['skype_contact']; ?>
+                                            </td>
                                             <td> Win 95+ </td>
                                             <td> 4 </td>
                                             <td> X </td>
                                         </tr>
+                                    <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
