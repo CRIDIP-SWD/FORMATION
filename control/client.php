@@ -207,7 +207,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-contact-control'){
 if(isset($_GET['action']) && $_GET['action'] == 'supp-contact-control'){
     include "../include/config.php";
     $idcontact = $_GET['idcontact'];
-    $sql_contact = mysql_query("SELECT idcontact FROM contact WHERE idcontact = '$idcontact'")or die(mysql_error());
+    $sql_contact = mysql_query("SELECT * FROM contact WHERE idcontact = '$idcontact'")or die(mysql_error());
     $contact = mysql_fetch_array($sql_contact);
     $nom_contact = $contact['nom_contact'];
     $prenom_contact = $contact['prenom_contact'];
