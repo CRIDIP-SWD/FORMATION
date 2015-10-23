@@ -129,9 +129,71 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-contact-control'){
         $sql_contact = mysql_query("SELECT * FROM contact WHERE idclient = '$idclient' AND nom_contact = '$nom_contact' AND prenom_contact = '$prenom_contact'")or die(mysql_error());
         $contact = mysql_fetch_array($sql_contact);
         $idcontact = $contact['idcontact'];
+        $email = $contact['mail_contact'];
 
         $sql_add_login = mysql_query("INSERT INTO `utilisateur`(`iduser`, `login`, `password`, `idcontact`, `nom_user`, `type`, `prenom_user`, `adresse_mail`)
                                 VALUES (NULL,'$login','$pass_crypt','$idcontact','$nom_contact','1','$prenom_contact','$mail_contact')")or die(mysql_error());
+
+        //Envoie du Mail
+        $to = $email .',';
+        $to .= 'mmockelyn@cridip.com';
+
+        $sujet = "<".NOM_LOGICIEL."> Réinitialisation de votre mot de passe";
+
+        ob_start();
+        ?>
+        <html>
+        <head>
+
+        </head>
+        <body>
+        <table style="width: 100%;">
+            <tr>
+                <td style="text-align: center; vertical-align: middle; font-weight: bold;"><?= NOM_LOGICIEL; ?></td>
+            </tr>
+        </table>
+        <table style="width: 100%;">
+            <tr>
+                <td style="text-align: left;"><strong>Objet:</strong> Ouverture de Compte CLH-FORMATION</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>
+                    Bonjour,<br>
+                    <br>
+                    Veuillez trouvez vos information de connexion au site .<br>
+                    <table style="width: 100%; border: solid 2px;">
+                        <tr>
+                            <td style="width: 50%;padding: 5%;">Nom d'utilisateur:</td>
+                            <td style="width: 50%;padding: 5%;"><?= $login; ?></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 50%;padding: 5%;">Mot de Passe:</td>
+                            <td style="width: 50%;padding: 5%;"><?= $pass_gen_clear; ?></td>
+                        </tr>
+                    </table>
+                    Une fois connecter à votre interface nous vous invitons à modifier ce mot de passe par celui à votre convenance dans la section <strong>VOTRE PROFIL</strong>
+                    -><strong>Mot de Passe</strong>.<br>
+                    <br>
+                    Nous restons à votre disposition pour toutes informations complémentaires.<br>
+                    Cordialement,
+                    <br>
+                    Support Technique<br>
+                    <i><?= NOM_LOGICIEL; ?></i>
+                </td>
+            </tr>
+        </table>
+        </body>
+        </html>
+        <?php
+        $message = ob_get_contents();
+
+        $headers = "MIME-Version: 1.0"."\r\n";
+        $headers .= "Content-type: text/html; charset=UTF-8"."\r\n";
+        $headers .= "To: no-reply <no-reply@clh>"."\r\n";
+
+        $mail = mail($to, $sujet, $message, $headers);
 
         if($sql_add_contact === TRUE AND $sql_add_login === TRUE)
         {
