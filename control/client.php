@@ -107,7 +107,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-contact-control'){
 
     if($access_portail == 0)
     {
-        //On ne créer pas d'accès dans la base "utilisateur"
+        //On ne crÃ©er pas d'accÃ¨s dans la base "utilisateur"
         $sql_add_contact = mysql_query("INSERT INTO `contact`(`idcontact`, `idclient`, `nom_contact`, `prenom_contact`, `tel_contact`, `port_contact`, `mail_contact`, `skype_contact`)
                                     VALUES (NULL,'$idclient','$nom_contact','$prenom_contact','$tel_contact','$port_contact','$mail_contact','$skype_contact')")or die(mysql_error());
 

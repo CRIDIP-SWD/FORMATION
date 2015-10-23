@@ -304,7 +304,7 @@ include "include/header.php";
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
                                             <h4 class="modal-title"><i class="fa fa-plus"></i> Ajout d'un contact</h4>
                                         </div>
-                                        <form class="form-horizontal" action="<?= ROOT,CONTROL; ?>client.php" method="post">
+                                        <form class="form-horizontal" id="form_add_contact" action="<?= ROOT,CONTROL; ?>client.php" method="post">
                                             <input type="hidden" name="idclient" value="<?= $idclient; ?>" />
                                             <div class="modal-body">
                                                 <div class="form-group">
@@ -368,7 +368,7 @@ include "include/header.php";
                                                     <div class="col-md-10">
                                                         <div class="md-radio-inline">
                                                             <div class="md-radio">
-                                                                <input type="radio" value="1" class="md-radiobtn" name="access_portail" id="radio53">
+                                                                <input type="radio" value="1" class="md-radiobtn" name="access_portail[]" id="radio53">
                                                                 <label for="radio53">
                                                                     <span></span>
                                                                     <span class="check"></span>
@@ -376,7 +376,7 @@ include "include/header.php";
                                                                 </label>
                                                             </div>
                                                             <div class="md-radio">
-                                                                <input type="radio" checked="" value="0" class="md-radiobtn" name="access_portail" id="radio54">
+                                                                <input type="radio" checked="" value="0" class="md-radiobtn" name="access_portail[]" id="radio54">
                                                                 <label for="radio54">
                                                                     <span></span>
                                                                     <span class="check"></span>
@@ -384,6 +384,17 @@ include "include/header.php";
                                                                 </label>
                                                             </div>
 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" id="pseudo_champs">
+                                                    <label class="col-md-3 control-label">Nom d'utilisateur</label>
+                                                    <div class="col-md-9">
+                                                        <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-user"></i>
+                                                        </span>
+                                                            <input type="text" name="login" class="form-control">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -499,6 +510,30 @@ include "include/header.php";
         })
     </script>
 <?php } ?>
+
+
+<script type="text/javascript">
+    document.getElementById("pseudo_champs").style.display="none";
+    function CheckRadio(name) {
+        //recupere tous les objets qui ont le nom "name"
+        var objs=document.getElementsByName(name);
+        //Pour chaques objets....
+        for(i=0;i<objs.length;i++) {
+            //Si l'objet en cours en coché on renvoie true
+            if (objs[i].checked==true)
+                return true;
+        }
+        //Si on arrive ici, aucun radio-bouton n'est coché, on renvoie false
+        return false;
+    }
+
+    if(CheckRadio("access_portail[]"))
+    {
+        document.getElementById("pseudo_champs").style.display="block";
+    }else{
+        document.getElementById("pseudo_champs").style.display="none";
+    }
+</script>
 
 <!-- END SCRIPT PAGE -->
 </body>
