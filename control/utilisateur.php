@@ -153,7 +153,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'reinit-pass')
                                                                 <p>Nous vous remercions pour la confiance que vous accordez à <?= NOM_LOGICIEL; ?> et restons à votre disposition.</p>
                                                                 <p>Cordialement,</p>
                                                                 <p>
-                                                                    Support Technique
+                                                                    Support Technique<br>
                                                                     <?= NOM_LOGICIEL; ?>
                                                                 </p>
                                                             </td>
