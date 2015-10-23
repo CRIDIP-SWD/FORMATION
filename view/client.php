@@ -107,15 +107,15 @@ include "include/header.php";
                             <div class="portlet-body">
                                 <table style="width: 100%;">
                                     <tr>
-                                        <td style="font-weight: bold;width: 50%;">Adresse:</td>
-                                        <td style="width: 50%;">
+                                        <td style="font-weight: bold;width: 50%; padding-bottom: 5px;">Adresse:</td>
+                                        <td style="width: 50%; padding-bottom: 5px;">
                                             <?= html_entity_decode($client['adresse']); ?><br>
                                             <?= $client['code_postal']; ?> <?= $client['ville']; ?>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="font-weight: bold;width: 50%;">Coordonnée:</td>
-                                        <td style="width: 50%;">
+                                        <td style="font-weight: bold;width: 50%; padding-bottom: 5px;">Coordonnée:</td>
+                                        <td style="width: 50%; padding-bottom: 5px;">
                                             Tel: <?= $client['telephone']; ?>
                                         </td>
                                     </tr>
