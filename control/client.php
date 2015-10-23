@@ -142,50 +142,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-contact-control'){
 
         ob_start();
         ?>
-        <html>
-        <head>
 
-        </head>
-        <body>
-        <table style="width: 100%;">
-            <tr>
-                <td style="text-align: center; vertical-align: middle; font-weight: bold;"><?= NOM_LOGICIEL; ?></td>
-            </tr>
-        </table>
-        <table style="width: 100%;">
-            <tr>
-                <td style="text-align: left;"><strong>Objet:</strong> Ouverture de Compte CLH-FORMATION</td>
-            </tr>
-        </table>
-        <table>
-            <tr>
-                <td>
-                    Bonjour,<br>
-                    <br>
-                    Veuillez trouvez vos information de connexion au site .<br>
-                    <table style="width: 50%; border: solid 2px;">
-                        <tr>
-                            <td style="width: 50%;padding: 5px;">Nom d'utilisateur:</td>
-                            <td style="width: 50%;padding: 5px;"><?= $login; ?></td>
-                        </tr>
-                        <tr>
-                            <td style="width: 50%;padding: 5px;">Mot de Passe:</td>
-                            <td style="width: 50%;padding: 5px;"><?= $pass_gen_clear; ?></td>
-                        </tr>
-                    </table>
-                    Une fois connecter à votre interface nous vous invitons à modifier ce mot de passe par celui à votre convenance dans la section <strong>VOTRE PROFIL</strong>
-                    -><strong>Mot de Passe</strong>.<br>
-                    <br>
-                    Nous restons à votre disposition pour toutes informations complémentaires.<br>
-                    Cordialement,
-                    <br>
-                    Support Technique<br>
-                    <i><?= NOM_LOGICIEL; ?></i>
-                </td>
-            </tr>
-        </table>
-        </body>
-        </html>
         <?php
         $message = ob_get_contents();
 

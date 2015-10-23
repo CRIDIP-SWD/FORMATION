@@ -87,40 +87,113 @@ if(isset($_POST['action']) && $_POST['action'] == 'reinit-pass')
 
             ob_start();
             ?>
-            <html>
-                <head>
+            <html xmlns="http://www.w3.org/1999/xhtml">
+            <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <meta name="viewport" content="width=device-width"/>
+                <link rel="stylesheet" href="<?= ROOT,ASSETS,CSS; ?>email.css">
+            </head>
+            <body>
+            <table class="body">
+                <tr>
+                    <td class="center" align="center" valign="top">
+                        <center>
 
-                </head>
-                <body>
-                    <table style="width: 100%;">
-                        <tr>
-                            <td style="text-align: center; vertical-align: middle; font-weight: bold;"><?= NOM_LOGICIEL; ?></td>
-                        </tr>
-                    </table>
-                    <table style="width: 100%;">
-                        <tr>
-                            <td style="text-align: left;"><strong>Objet:</strong> Réinitialisation de votre mot de Passe</td>
-                        </tr>
-                    </table>
-                    <table>
-                        <tr>
-                            <td>
-                                Bonjour,<br>
-                                <br>
-                                Vous avez demandé la réinitialisation de votre mot de passe.<br>
-                                Votre nouveau mot de passe temporaire est le: <strong><?= $new_pass; ?></strong>.<br>
-                                Une fois connecter à votre interface nous vous invitons à modifier ce mot de passe par celui à votre convenance dans la section <strong>VOTRE PROFIL</strong>
-                                -><strong>Mot de Passe</strong>.<br>
-                                <br>
-                                Nous restons à votre disposition pour toutes informations complémentaires.<br>
-                                Cordialement,
-                                <br>
-                                Support Technique<br>
-                                <i><?= NOM_LOGICIEL; ?></i>
-                            </td>
-                        </tr>
-                    </table>
-                </body>
+                            <table class="row header">
+                                <tr>
+                                    <td class="center" align="center">
+                                        <center>
+
+                                            <table class="container">
+                                                <tr>
+                                                    <td class="wrapper last">
+
+                                                        <table class="twelve columns">
+                                                            <tr>
+                                                                <td class="six sub-columns">
+                                                                    <span style="width: 200px;height: 50px; font-weight: bold; font-size: 29px;"><?= NOM_LOGICIEL; ?></span>
+                                                                </td>
+                                                                <td class="six sub-columns last" style="text-align:right; vertical-align:middle;">
+                                                                    <span class="template-label">Réinitialisation de votre mot de passe</span>
+                                                                </td>
+                                                                <td class="expander"></td>
+                                                            </tr>
+                                                        </table>
+
+                                                    </td>
+                                                </tr>
+                                            </table>
+
+                                        </center>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <table class="container">
+                                <tr>
+                                    <td>
+
+                                        <table class="row">
+                                            <tr>
+                                                <td class="wrapper last">
+
+                                                    <table class="twelve columns">
+                                                        <tr>
+                                                            <td>
+                                                                <h1>BONJOUR</h1>
+                                                                <p>
+                                                                    Vous avez demander la réinitialisation de votre mot de passe sur notre portail de formation.<br>
+                                                                    Veuillez prendre note de votre nouveau mot de passe provisoire: <strong><?= $new_pass; ?></strong>
+                                                                </p>
+                                                                <p>
+                                                                    Nous vous conseillons de modifier votre mot de passe une fois connecter à l'interface.<br>
+                                                                    Pour y parvenir allez dans la section:<br>
+                                                                    <strong>Vos informations</strong> -> <strong>Onglet "Mot de Passe"</strong>
+                                                                </p>
+                                                                <p>Nous vous remercions pour la confiance que vous accordez à <?= NOM_LOGICIEL; ?> et restons à votre disposition.</p>
+                                                                <p>Cordialement,</p>
+                                                                <p>
+                                                                    Support Technique
+                                                                    <?= NOM_LOGICIEL; ?>
+                                                                </p>
+                                                            </td>
+                                                            <td class="expander"></td>
+                                                        </tr>
+                                                    </table>
+
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <table class="row footer">
+                                            <tr>
+                                                <td class="wrapper last">
+
+                                                    <table class="six columns">
+                                                        <tr>
+                                                            <td class="last right-text-pad">
+                                                                <h5>CLH FORMATION:</h5>
+                                                                <p>Téléphone: 06 50 37 24 51</p>
+                                                                <p>Email: <a href="mailto:ph.bertrand61@gmail.com">ph.bertrand61@gmail.com</a></p>
+                                                            </td>
+                                                            <td class="expander"></td>
+                                                        </tr>
+                                                    </table>
+
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <!-- container end below -->
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </center>
+                    </td>
+                </tr>
+            </table>
+            </body>
             </html>
             <?php
             $message = ob_get_contents();
