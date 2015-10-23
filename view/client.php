@@ -1,6 +1,6 @@
 <?php
 $nom_sector = "";
-$nom_page = "Accueil";
+$nom_page = "Client";
 include "include/header.php";
 ?>
 
@@ -45,389 +45,54 @@ include "include/header.php";
             </ul>
             <!-- END PAGE BREADCRUMB -->
             <!-- BEGIN PAGE BASE CONTENT -->
-            <?php if($info_user['type'] == 1){ ?>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="portlet light bordered">
-                            <div class="portlet-title">
-                                <div class="caption">
-                                    <i class="icon-bubble font-green-sharp"></i>
-                                    <span class="caption-subject font-green-sharp bold uppercase">Bienvenue</span>
-                                </div>
-                            </div>
-                            <div class="portlet-body">
-                                <ul class="nav nav-pills">
-                                    <li class="active">
-                                        <a href="#ie" data-toggle="tab"> Inter Entreprise </a>
-                                    </li>
-                                    <li>
-                                        <a href="#cat" data-toggle="tab"> Catalogue </a>
-                                    </li>
-                                </ul>
-                                <div class="tab-content">
-                                    <div class="tab-pane fade active in" id="ie">
-                                        <h1>FORMATION INTER ENTREPRISE - SECURITE</h1>
-                                        <form class="form-horizontal" action="<?= ROOT,CONTROL; ?>commande.php" method="POST">
-                                            <input type="hidden" name="idcontact" value="<?= $info_user['idcontact']; ?>" />
-                                            <div class="form-body">
-                                                <div class="form-group">
-                                                    <label for="single" class="control-label col-md-3">Selectionner le Thème de la Formation</label>
-                                                    <div class="col-md-9">
-                                                        <select id="single" name="theme" class="form-control bs-select" data-show-subtext="true">
-                                                            <option></option>
-                                                            <?php
-                                                            $sql_inter_formation = mysql_query("SELECT * FROM inter_calendar_formation ORDER BY date_formation ASC")or die(mysql_error());
-                                                            while($if = mysql_fetch_array($sql_inter_formation))
-                                                            {
-
-                                                                ?>
-                                                                <option value="<?= $if['idformation']; ?>" data-content="<?= $if['theme']; ?> du <strong><?= $date_class->jour_semaine(date('N', $if['date_formation'])); ?> <?= date('d', $if['date_formation']); ?> <?= $date_class->mois(date('n', $if['date_formation'])); ?> <?= date('Y', $if['date_formation']); ?></strong> - <?= number_format($if['prix'], 2, ',', ' ')." €"; ?> - <?= $if['duree']; ?>"></option>
-                                                            <?php } ?>
-                                                        </select>
-                                                        <p>
-                                                            <strong>Octobre:</strong> Nous consulter pour la formation <strong>ECHAFAUDAGE ROULANT</strong><br>
-                                                            <strong>Décembre:</strong> Nous consulter pour la formation <strong>ECHAFAUDAGE ROULANT</strong>
-                                                        </p>
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3">Nombre de Personne</label>
-                                                    <div class="col-md-4">
-                                                        <input id="touchspin_5" type="text" value="" name="nb_personne">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-actions right">
-                                                <button type="submit" class="btn green pull-right" name="action" value="add-formation-inter"><i class="fa fa-check"></i> Envoyer la demande</button>
-                                            </div>
-
-
-                                        </form>
-                                    </div>
-                                    <div class="tab-pane fade" id="cat">
-                                        <h1>CATALOGUE DE FORMATION</h1>
-                                        <form action="<?= ROOT,CONTROL; ?>commande.php" method="post" role="form">
-                                            <ul class="nav nav-pills">
-                                                <?php
-                                                $sql_famille1 = mysql_query("SELECT * FROM famille_catalogue LIMIT 1")or die(mysql_error());
-                                                while($famille1 = mysql_fetch_array($sql_famille1))
-                                                {
-                                                    ?>
-                                                    <li class="active"><a href="#<?= $famille1['designation_famille']; ?>" data-toggle="tab"> <?= $famille1['designation_famille']; ?> </a></li>
-                                                <?php } ?>
-                                                <?php
-                                                $sql_famille = mysql_query("SELECT * FROM famille_catalogue LIMIT 1, 999")or die(mysql_error());
-                                                while($famille = mysql_fetch_array($sql_famille))
-                                                {
-                                                    ?>
-                                                    <li><a href="#<?= $famille['designation_famille']; ?>" data-toggle="tab"> <?= $famille['designation_famille']; ?> </a></li>
-                                                <?php } ?>
-                                            </ul>
-                                            <div class="tab-content">
-                                                <?php
-                                                $sql_famille1 = mysql_query("SELECT * FROM famille_catalogue LIMIT 1")or die(mysql_error());
-                                                while($famille1 = mysql_fetch_array($sql_famille1))
-                                                {
-                                                    $idfamille1 = $famille1['idfamillecatalogue'];
-                                                    ?>
-                                                    <div class="tab-pane fade active in" id="<?= $famille1['designation_famille']; ?>">
-                                                        <div class="row">
-                                                            <div class="col-md-3 col-sm-3 col-xs-3">
-                                                                <ul class="nav nav-tabs tabs-left">
-                                                                    <?php
-                                                                    $sql_sous_famille1 = mysql_query("SELECT * FROM sous_famille_catalogue WHERE idfamillecatalogue = '$idfamille1' LIMIT 1")or die(mysql_error());
-                                                                    while($sous_famille1 = mysql_fetch_array($sql_sous_famille1))
-                                                                    {
-                                                                        $idsousfamille1 = $sous_famille1['idsousfamillecatalogue'];
-                                                                        ?>
-                                                                        <li class="active">
-                                                                            <a href="#<?= $sous_famille1['idsousfamillecatalogue']; ?>" data-toggle="tab"> <?= $sous_famille1['designation_sous_famille']; ?> </a>
-                                                                        </li>
-                                                                    <?php } ?>
-                                                                    <?php
-                                                                    $sql_sous_famille = mysql_query("SELECT * FROM sous_famille_catalogue WHERE idfamillecatalogue = '$idfamille1' LIMIT 1, 999")or die(mysql_error());
-                                                                    while($sous_famille = mysql_fetch_array($sql_sous_famille))
-                                                                    {
-                                                                        $idsousfamille = $sous_famille['idsousfamillecatalogue'];
-                                                                        ?>
-                                                                        <li>
-                                                                            <a href="#<?= $sous_famille['idsousfamillecatalogue']; ?>" data-toggle="tab"> <?= $sous_famille['designation_sous_famille']; ?> </a>
-                                                                        </li>
-                                                                    <?php } ?>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="col-md-9 col-sm-9 col-xs-9">
-                                                                <div class="tab-content">
-                                                                    <?php
-                                                                    $sql_sous_famille1 = mysql_query("SELECT * FROM sous_famille_catalogue WHERE idfamillecatalogue = '$idfamille1' LIMIT 1")or die(mysql_error());
-                                                                    while($sous_famille1 = mysql_fetch_array($sql_sous_famille1))
-                                                                    {
-                                                                        $idsousfamille1 = $sous_famille1['idsousfamillecatalogue'];
-                                                                        ?>
-                                                                        <div class="tab-pane active" id="<?= $sous_famille1['idsousfamillecatalogue']; ?>">
-                                                                            <table class="table table-bordered">
-                                                                                <caption><?= $sous_famille1['designation_sous_famille']; ?></caption>
-                                                                                <thead>
-                                                                                <tr>
-                                                                                    <th>Référence</th>
-                                                                                    <th>Formation</th>
-                                                                                    <th></th>
-                                                                                </tr>
-                                                                                </thead>
-                                                                                <tbody>
-                                                                                <?php
-                                                                                $sql_catalogue = mysql_query("SELECT * FROM catalogue WHERE idsousfamillecatalogue = '$idsousfamille1' ORDER BY ref_produit ASC")or die(mysql_error());
-                                                                                while($catalogue = mysql_fetch_array($sql_catalogue))
-                                                                                {
-                                                                                    ?>
-                                                                                    <tr>
-                                                                                        <td>(Réf. <?= $catalogue['ref_produit']; ?>)</td>
-                                                                                        <td><?= html_entity_decode($catalogue['designation_produit']); ?></td>
-                                                                                        <td>
-                                                                                            <div class="form-group form-md-checkboxes">
-                                                                                                <div class="md-checkbox-inline">
-                                                                                                    <div class="md-checkbox">
-                                                                                                        <input type="checkbox" id="checkbox<?= $catalogue['idproduit']; ?>" name="choix[]" value="<?= $catalogue['idproduit']; ?>" class="md-check">
-                                                                                                        <label for="checkbox<?= $catalogue['idproduit']; ?>">
-                                                                                                            <span></span>
-                                                                                                            <span class="check"></span>
-                                                                                                            <span class="box"></span>
-                                                                                                        </label>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                <?php } ?>
-                                                                                </tbody>
-                                                                            </table>
-                                                                        </div>
-                                                                    <?php } ?>
-                                                                    <?php
-                                                                    $sql_sous_famille = mysql_query("SELECT * FROM sous_famille_catalogue WHERE idfamillecatalogue = '$idfamille1' LIMIT 1, 999")or die(mysql_error());
-                                                                    while($sous_famille = mysql_fetch_array($sql_sous_famille))
-                                                                    {
-                                                                        $idsousfamille = $sous_famille['idsousfamillecatalogue'];
-                                                                        ?>
-                                                                        <div class="tab-pane fade" id="<?= $sous_famille['idsousfamillecatalogue']; ?>">
-                                                                            <table class="table table-bordered">
-                                                                                <caption><?= $sous_famille['designation_sous_famille']; ?></caption>
-                                                                                <thead>
-                                                                                <tr>
-                                                                                    <th>Référence</th>
-                                                                                    <th>Formation</th>
-                                                                                    <th></th>
-                                                                                </tr>
-                                                                                </thead>
-                                                                                <tbody>
-                                                                                <?php
-                                                                                $sql_catalogue = mysql_query("SELECT * FROM catalogue WHERE idsousfamillecatalogue = '$idsousfamille' ORDER BY ref_produit ASC")or die(mysql_error());
-                                                                                while($catalogue = mysql_fetch_array($sql_catalogue))
-                                                                                {
-                                                                                    ?>
-                                                                                    <tr>
-                                                                                        <td>(Réf. <?= $catalogue['ref_produit']; ?>)</td>
-                                                                                        <td><?= html_entity_decode($catalogue['designation_produit']); ?></td>
-                                                                                        <td>
-                                                                                            <div class="form-group form-md-checkboxes">
-                                                                                                <div class="md-checkbox-inline">
-                                                                                                    <div class="md-checkbox">
-                                                                                                        <input type="checkbox" id="checkbox<?= $catalogue['idproduit']; ?>" name="choix[]" value="<?= $catalogue['idproduit']; ?>" class="md-check">
-                                                                                                        <label for="checkbox<?= $catalogue['idproduit']; ?>">
-                                                                                                            <span></span>
-                                                                                                            <span class="check"></span>
-                                                                                                            <span class="box"></span>
-                                                                                                        </label>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                <?php } ?>
-                                                                                </tbody>
-                                                                            </table>
-                                                                        </div>
-                                                                    <?php } ?>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                <?php } ?>
-                                                <?php
-                                                $sql_famille = mysql_query("SELECT * FROM famille_catalogue LIMIT 1, 999")or die(mysql_error());
-                                                while($famille = mysql_fetch_array($sql_famille))
-                                                {
-                                                    $idfamille = $famille['idfamillecatalogue'];
-                                                    ?>
-                                                    <div class="tab-pane fade active in" id="<?= $famille['designation_famille']; ?>">
-                                                        <div class="row">
-                                                            <div class="col-md-3 col-sm-3 col-xs-3">
-                                                                <ul class="nav nav-tabs tabs-left">
-                                                                    <?php
-                                                                    $sql_sous_famille1 = mysql_query("SELECT * FROM sous_famille_catalogue WHERE idfamillecatalogue = '$idfamille' LIMIT 1")or die(mysql_error());
-                                                                    while($sous_famille1 = mysql_fetch_array($sql_sous_famille1))
-                                                                    {
-                                                                        $idsousfamille1 = $sous_famille1['idsousfamillecatalogue'];
-                                                                        ?>
-                                                                        <li class="active">
-                                                                            <a href="#<?= $sous_famille1['idsousfamillecatalogue']; ?>" data-toggle="tab"> <?= $sous_famille1['designation_sous_famille']; ?> </a>
-                                                                        </li>
-                                                                    <?php } ?>
-                                                                    <?php
-                                                                    $sql_sous_famille = mysql_query("SELECT * FROM sous_famille_catalogue WHERE idfamillecatalogue = '$idfamille' LIMIT 1, 999")or die(mysql_error());
-                                                                    while($sous_famille = mysql_fetch_array($sql_sous_famille))
-                                                                    {
-                                                                        $idsousfamille = $sous_famille['idsousfamillecatalogue'];
-                                                                        ?>
-                                                                        <li>
-                                                                            <a href="#<?= $sous_famille['idsousfamillecatalogue']; ?>" data-toggle="tab"> <?= $sous_famille['designation_sous_famille']; ?> </a>
-                                                                        </li>
-                                                                    <?php } ?>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="col-md-9 col-sm-9 col-xs-9">
-                                                                <div class="tab-content">
-                                                                    <?php
-                                                                    $sql_sous_famille1 = mysql_query("SELECT * FROM sous_famille_catalogue WHERE idfamillecatalogue = '$idfamille' LIMIT 1")or die(mysql_error());
-                                                                    while($sous_famille1 = mysql_fetch_array($sql_sous_famille1))
-                                                                    {
-                                                                        $idsousfamille1 = $sous_famille1['idsousfamillecatalogue'];
-                                                                        ?>
-                                                                        <div class="tab-pane active" id="<?= $sous_famille1['idsousfamillecatalogue']; ?>">
-                                                                            <table class="table table-bordered">
-                                                                                <caption><?= $sous_famille1['designation_sous_famille']; ?></caption>
-                                                                                <thead>
-                                                                                <tr>
-                                                                                    <th>Référence</th>
-                                                                                    <th>Formation</th>
-                                                                                    <th></th>
-                                                                                </tr>
-                                                                                </thead>
-                                                                                <tbody>
-                                                                                <?php
-                                                                                $sql_catalogue = mysql_query("SELECT * FROM catalogue WHERE idsousfamillecatalogue = '$idsousfamille1' ORDER BY ref_produit ASC")or die(mysql_error());
-                                                                                while($catalogue = mysql_fetch_array($sql_catalogue))
-                                                                                {
-                                                                                    ?>
-                                                                                    <tr>
-                                                                                        <td>(Réf. <?= $catalogue['ref_produit']; ?>)</td>
-                                                                                        <td><?= html_entity_decode($catalogue['designation_produit']); ?></td>
-                                                                                        <td>
-                                                                                            <div class="form-group form-md-checkboxes">
-                                                                                                <div class="md-checkbox-inline">
-                                                                                                    <div class="md-checkbox">
-                                                                                                        <input type="checkbox" id="checkbox<?= $catalogue['idproduit']; ?>" name="choix[]" value="<?= $catalogue['idproduit']; ?>" class="md-check">
-                                                                                                        <label for="checkbox<?= $catalogue['idproduit']; ?>">
-                                                                                                            <span></span>
-                                                                                                            <span class="check"></span>
-                                                                                                            <span class="box"></span>
-                                                                                                        </label>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                <?php } ?>
-                                                                                </tbody>
-                                                                            </table>
-                                                                        </div>
-                                                                    <?php } ?>
-                                                                    <?php
-                                                                    $sql_sous_famille = mysql_query("SELECT * FROM sous_famille_catalogue WHERE idfamillecatalogue = '$idfamille' LIMIT 1, 999")or die(mysql_error());
-                                                                    while($sous_famille = mysql_fetch_array($sql_sous_famille))
-                                                                    {
-                                                                        $idsousfamille = $sous_famille['idsousfamillecatalogue'];
-                                                                        ?>
-                                                                        <div class="tab-pane fade" id="<?= $sous_famille['idsousfamillecatalogue']; ?>">
-                                                                            <table class="table table-bordered">
-                                                                                <caption><?= $sous_famille['designation_sous_famille']; ?></caption>
-                                                                                <thead>
-                                                                                <tr>
-                                                                                    <th>Référence</th>
-                                                                                    <th>Formation</th>
-                                                                                    <th></th>
-                                                                                </tr>
-                                                                                </thead>
-                                                                                <tbody>
-                                                                                <?php
-                                                                                $sql_catalogue = mysql_query("SELECT * FROM catalogue WHERE idsousfamillecatalogue = '$idsousfamille' ORDER BY ref_produit ASC")or die(mysql_error());
-                                                                                while($catalogue = mysql_fetch_array($sql_catalogue))
-                                                                                {
-                                                                                    ?>
-                                                                                    <tr>
-                                                                                        <td>(Réf. <?= $catalogue['ref_produit']; ?>)</td>
-                                                                                        <td><?= html_entity_decode($catalogue['designation_produit']); ?></td>
-                                                                                        <td>
-                                                                                            <div class="form-group form-md-checkboxes">
-                                                                                                <div class="md-checkbox-inline">
-                                                                                                    <div class="md-checkbox">
-                                                                                                        <input type="checkbox" id="checkbox<?= $catalogue['idproduit']; ?>" name="choix[]" value="<?= $catalogue['idproduit']; ?>" class="md-check">
-                                                                                                        <label for="checkbox<?= $catalogue['idproduit']; ?>">
-                                                                                                            <span></span>
-                                                                                                            <span class="check"></span>
-                                                                                                            <span class="box"></span>
-                                                                                                        </label>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                <?php } ?>
-                                                                                </tbody>
-                                                                            </table>
-                                                                        </div>
-                                                                    <?php } ?>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                <?php } ?>
-
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3">Expliquez nous vos besoins ?</label>
-                                                    <div class="col-md-9">
-                                                        <textarea class="ckeditor form-control" name="besoin" rows="6"></textarea>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3">Nombre de Personne</label>
-                                                    <div class="col-md-9">
-                                                        <input id="touchspin_6" type="text" value="" name="nb_personne">
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3">Période Souhaitée</label>
-                                                    <div class="col-md-9">
-                                                        <div class="input-group input-large date-picker input-daterange" data-date="<?= $date_jour; ?>" data-date-format="dd-mm-yyyy">
-                                                            <input type="text" class="form-control" name="start">
-                                                            <span class="input-group-addon"> au </span>
-                                                            <input type="text" class="form-control" name="end"> </div>
-                                                        <!-- /input-group -->
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3">Observation</label>
-                                                    <div class="col-md-9">
-                                                        <textarea class="ckeditor form-control" name="observation" rows="6"></textarea>
-                                                    </div>
-                                                </div>
-                                                <input type="hidden" name="idcontact" value="<?= $info_user['idcontact']; ?>" />
-
-                                            </div>
-                                            <div class="form-action right">
-                                                <button type="submit" class="btn green right" name="action" value="add-formation-catalogue"><i class="fa fa-check"></i> Envoyer la demande</button>
-                                                <button type="reset" class="btn red right">Réinitialiser</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
+            <?php if(!isset($_GET)){ ?>
+                <div class="portlet light bordered">
+                    <div class="portlet-title">
+                        <div class="caption font-dark">
+                            <i class="icon-settings font-dark"></i>
+                            <span class="caption-subject bold uppercase">Header Fixed</span>
+                        </div>
+                        <div class="actions">
+                            <div class="btn-group btn-group-devided" data-toggle="buttons">
+                                <label class="btn btn-transparent dark btn-outline btn-circle btn-sm active">
+                                    <input type="radio" name="options" class="toggle" id="option1">Actions</label>
+                                <label class="btn btn-transparent dark btn-outline btn-circle btn-sm">
+                                    <input type="radio" name="options" class="toggle" id="option2">Settings</label>
                             </div>
                         </div>
+                    </div>
+                    <div class="portlet-body">
+                        <table class="table table-striped table-bordered table-hover table-header-fixed" id="sample_1">
+                            <thead>
+                                <tr class="">
+                                    <th> ID </th>
+                                    <th> Nom de la sociÃ©tÃ© </th>
+                                    <th> Adresse </th>
+                                    <th> CoordonnÃ©e </th>
+                                    <th>  </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            $sql_client = mysql_query("SELECT * FROM client")or die(mysql_error());
+                            while($client = mysql_fetch_array($sql_client))
+                            {
+                            ?>
+                                <tr>
+                                    <td> <?= $client['idclient']; ?> </td>
+                                    <td> <?= $client['nom_societe']; ?> </td>
+                                    <td>
+                                        <?= html_entity_decode($client['adresse']); ?><br>
+                                        <?= $client['code_postal']; ?> <?= $client['ville']; ?>
+                                    </td>
+                                    <td> Tel: <?= $client['telephone']; ?> </td>
+                                    <td>
+                                        <a href="index.php?view=client&sub=view-client" class="btn tooltips" data-container="body" data-placement="top" data-original-title="Voir la fiche"><i class="fa fa-eye text-primary"></i></a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             <?php } ?>
@@ -445,34 +110,41 @@ include "include/header.php";
 <!-- END CONTAINER -->
 <?php include "include/footer.php"; ?>
 
+<link href="<?= ROOT,ASSETS,PLUGINS; ?>datatables/datatables.min.css" rel="stylesheet" type="text/css" />
+<link href="<?= ROOT,ASSETS,PLUGINS; ?>datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" type="text/css" />
 
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>datatables/datatables.min.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>
+
+<script src="<?= ROOT,ASSETS,JS; ?>table-datatables-fixedheader.min.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,JS; ?>datatable.js" type="text/javascript"></script>
 
 
 <!-- BEGIN SCRIPT PAGE -->
 <?php if(isset($_GET['success']) && $_GET['success'] == 'add-formation-inter'){ ?>
     <script type="text/javascript">
-        toastr.success("Votre demande à bien été pris en compte. Un responsable vous contactera bientôt afin de finaliser votre demande !", "DEMANDE DE FORMATION INTER ENTREPRISE",{
+        toastr.success("Votre demande Ã  bien Ã©tÃ© pris en compte. Un responsable vous contactera bientÃ´t afin de finaliser votre demande !", "DEMANDE DE FORMATION INTER ENTREPRISE",{
             "positionClass": "toast-top-center"
         })
     </script>
 <?php } ?>
 <?php if(isset($_GET['success']) && $_GET['success'] == 'add-formation-catalogue'){ ?>
     <script type="text/javascript">
-        toastr.success("Votre demande à bien été pris en compte. Un responsable vous contactera bientôt afin de finaliser votre demande !", "DEMANDE DE FORMATION SUR CATALOGUE",{
+        toastr.success("Votre demande Ã  bien Ã©tÃ© pris en compte. Un responsable vous contactera bientÃ´t afin de finaliser votre demande !", "DEMANDE DE FORMATION SUR CATALOGUE",{
             "positionClass": "toast-top-center"
         })
     </script>
 <?php } ?>
 <?php if(isset($_GET['error']) && $_GET['error'] == 'add-formation-inter'){ ?>
     <script type="text/javascript">
-        toastr.error("Une erreur à eu lieu lors de votre demande.<br>Veuillez contacter l'administrateur système.", "DEMANDE DE FORMATION INTER ENTREPRISE",{
+        toastr.error("Une erreur Ã  eu lieu lors de votre demande.<br>Veuillez contacter l'administrateur systÃ¨me.", "DEMANDE DE FORMATION INTER ENTREPRISE",{
             "positionClass": "toast-top-center"
         })
     </script>
 <?php } ?>
 <?php if(isset($_GET['error']) && $_GET['error'] == 'add-formation-catalogue'){ ?>
     <script type="text/javascript">
-        toastr.error("Une erreur à eu lieu lors de votre demande.<br>Veuillez contacter l'administrateur système.", "DEMANDE DE FORMATION SUR CATALOGUE",{
+        toastr.error("Une erreur Ã  eu lieu lors de votre demande.<br>Veuillez contacter l'administrateur systÃ¨me.", "DEMANDE DE FORMATION SUR CATALOGUE",{
             "positionClass": "toast-top-center"
         })
     </script>
