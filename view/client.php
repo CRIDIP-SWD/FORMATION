@@ -254,8 +254,8 @@ include "include/header.php";
                                     <span class="caption-subject bold uppercase">Liste des contacts</span>
                                 </div>
                                 <div class="actions">
-                                    <a class="btn btn-circle btn-green" data-toggle="modal" href="#add-contact-modal">
-                                        <i class="fa fa-pencil"></i> Ajouter un contact
+                                    <a class="btn btn-circle green" data-toggle="modal" href="#add-contact-modal">
+                                        <i class="fa fa-plus"></i> Ajouter un contact
                                     </a>
                                 </div>
                             </div>
@@ -305,11 +305,67 @@ include "include/header.php";
                                             <h4 class="modal-title"><i class="fa fa-plus"></i> Ajout d'un contact</h4>
                                         </div>
                                         <form class="form-horizontal" action="<?= ROOT,CONTROL; ?>client.php" method="post">
+                                            <input type="hidden" name="idclient" value="<?= $idclient; ?>" />
                                             <div class="modal-body">
-
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">Nom du contact</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control" name="nom_contact">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">Prénom du contact</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control" name="prenom_contact">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">Téléphone</label>
+                                                    <div class="col-md-9">
+                                                        <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-phone"></i>
+                                                        </span>
+                                                            <input type="text" name="tel_contact" id="mask_tel" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">Portable</label>
+                                                    <div class="col-md-9">
+                                                        <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-mobile-phone"></i>
+                                                        </span>
+                                                            <input type="text" name="port_contact" id="mask_tel" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">Adresse Mail du contact</label>
+                                                    <div class="col-md-9">
+                                                        <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-envelope"></i>
+                                                        </span>
+                                                            <input type="text" name="mail_contact" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">Skype du contact</label>
+                                                    <div class="col-md-9">
+                                                        <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-skype"></i>
+                                                        </span>
+                                                            <input type="text" name="skype_contact" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn dark btn-outline" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn dark btn-outline" data-dismiss="modal">Fermer</button>
                                                 <button type="submit" class="btn green" name="action" value="add-contact-control"><i class="fa fa-check"></i> Valider</button>
                                             </div>
                                         </form>
