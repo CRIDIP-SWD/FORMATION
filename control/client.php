@@ -122,14 +122,17 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-contact-control'){
         $pass_gen_clear = $cl_class->generate_password(8);
         $pass_crypt = sha1($pass_gen_clear);
 
+        $sql_add_contact = mysql_query("INSERT INTO `contact`(`idcontact`, `idclient`, `nom_contact`, `prenom_contact`, `tel_contact`, `port_contact`, `mail_contact`, `skype_contact`)
+                                    VALUES (NULL,'$idclient','$nom_contact','$prenom_contact','$tel_contact','$port_contact','$mail_contact','$skype_contact')")or die(mysql_error());
+
         $sql_contact = mysql_query("SELECT * FROM contact WHERE idclient = '$idclient' AND nom_contact = '$nom_contact' AND prenom_contact = '$prenom_contact'")or die(mysql_error());
         $contact = mysql_fetch_array($sql_contact);
         $idcontact = $contact['idcontact'];
 
         $sql_add_login = mysql_query("INSERT INTO `utilisateur`(`iduser`, `login`, `password`, `idcontact`, `nom_user`, `type`, `prenom_user`, `adresse_mail`)
                                 VALUES (NULL,'$mail_contact','$pass_crypt','$idcontact','$nom_contact','1','$prenom_contact','$mail_contact')")or die(mysql_error());
-        die();
-        if($sql_add_contact === TRUE)
+
+        if($sql_add_contact === TRUE AND $sql_add_login === TRUE)
         {
             header("Location: ../index.php?view=client&sub=view-client&idclient=$idclient&post=$nom_contact $prenom_contact&success=add-contact-login");
         }else{
