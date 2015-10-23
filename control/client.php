@@ -94,4 +94,47 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-client-control')
 }
 if(isset($_POST['action']) && $_POST['action'] == 'add-contact-control'){
     include "../include/config.php";
+    use client;
+    $cl_class = new client();
+    $idclient           = $_POST['idclient'];
+    $nom_contact        = $_POST['nom_contact'];
+    $prenom_contact     = $_POST['prenom_contact'];
+    $tel_contact        = $_POST['tel_contact'];
+    $port_contact       = $_POST['port_contact'];
+    $mail_contact       = $_POST['mail_contact'];
+    $skype_contact      = $_POST['skype_contact'];
+    $access_portail     = $_POST['access_portail'];
+
+    if($access_portail == 0)
+    {
+        //On ne créer pas d'accès dans la base "utilisateur"
+        $sql_add_contact = mysql_query("INSERT INTO `contact`(`idcontact`, `idclient`, `nom_contact`, `prenom_contact`, `tel_contact`, `port_contact`, `mail_contact`, `skype_contact`)
+                                    VALUES (NULL,'$idclient','$nom_contact','$prenom_contact','$tel_contact','$port_contact','$mail_contact','$skype_contact')")or die(mysql_error());
+
+
+        if($sql_add_contact === TRUE)
+        {
+            header("Location: ../index.php?view=client&sub=view-client&idclient=$idclient&post=$nom_contact $prenom_contact&success=add-contact");
+        }else{
+            header("Location: ../index.php?view=client&sub=view-client&idclient=$idclient&error=add-contact");
+        }
+    }else{
+        $pass_gen_clear = $cl_class->generate_password(8);
+        $pass_crypt = sha1($pass_gen_clear);
+
+        $sql_contact = mysql_query("SELECT * FROM contact WHERE idclient = '$idclient' AND nom_contact = '$nom_contact' AND prenom_contact = '$prenom_contact'")or die(mysql_error());
+        $contact = mysql_fetch_array($sql_contact);
+        $idcontact = $contact['idcontact'];
+
+        $sql_add_login = mysql_query("INSERT INTO `utilisateur`(`iduser`, `login`, `password`, `idcontact`, `nom_user`, `type`, `prenom_user`, `adresse_mail`)
+                                VALUES (NULL,'$mail_contact','$pass_crypt','$idcontact','$nom_contact','1','$prenom_contact','$mail_contact')")or die(mysql_error());
+
+        if($sql_add_contact === TRUE)
+        {
+            header("Location: ../index.php?view=client&sub=view-client&idclient=$idclient&post=$nom_contact $prenom_contact&success=add-contact-login");
+        }else{
+            header("Location: ../index.php?view=client&sub=view-client&idclient=$idclient&error=add-contact");
+        }
+    }
+
 }

@@ -438,21 +438,35 @@ include "include/header.php";
 <?php if(isset($_GET['success']) && $_GET['success'] == 'add-client'){ ?>
     <script type="text/javascript">
         toastr.success("Le client <strong><?= $_GET['post']; ?></strong> à bien été crée.", "CREATION CLIENT",{
-            "positionClass": "toast-top-center"
+            "positionClass": "toast-bottom-right"
         })
     </script>
 <?php } ?>
 <?php if(isset($_GET['success']) && $_GET['success'] == 'edit-client'){ ?>
     <script type="text/javascript">
         toastr.success("Le client <strong><?= $_GET['post']; ?></strong> à bien été modifié.", "EDITION CLIENT",{
-            "positionClass": "toast-top-center"
+            "positionClass": "toast-bottom-right"
         })
     </script>
 <?php } ?>
 <?php if(isset($_GET['success']) && $_GET['success'] == 'supp-client'){ ?>
     <script type="text/javascript">
         toastr.success("Le client <strong><?= $_GET['post']; ?></strong> à bien été supprimé.", "SUPPRESSION CLIENT",{
-            "positionClass": "toast-top-center"
+            "positionClass": "toast-bottom-right"
+        })
+    </script>
+<?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'add-contact'){ ?>
+    <script type="text/javascript">
+        toastr.success("Le contact <strong><?= $_GET['post']; ?></strong> à bien été crée.", "CREATION CONTACT",{
+            "positionClass": "toast-bottom-right"
+        })
+    </script>
+<?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'add-contact-login'){ ?>
+    <script type="text/javascript">
+        toastr.success("Le contact <strong><?= $_GET['post']; ?></strong> à bien été crée avec le login associé.", "CREATION CONTACT",{
+            "positionClass": "toast-bottom-right"
         })
     </script>
 <?php } ?>
@@ -460,21 +474,28 @@ include "include/header.php";
 <?php if(isset($_GET['error']) && $_GET['error'] == 'add-client'){ ?>
     <script type="text/javascript">
         toastr.error("La création du client à échoué", "CREATION CLIENT",{
-            "positionClass": "toast-top-center"
+            "positionClass": "toast-bottom-right"
         })
     </script>
 <?php } ?>
 <?php if(isset($_GET['error']) && $_GET['error'] == 'edit-client'){ ?>
     <script type="text/javascript">
         toastr.error("La modification du client à échoué", "EDITION CLIENT",{
-            "positionClass": "toast-top-center"
+            "positionClass": "toast-bottom-right"
         })
     </script>
 <?php } ?>
 <?php if(isset($_GET['error']) && $_GET['error'] == 'supp-client'){ ?>
     <script type="text/javascript">
         toastr.error("La suppression du client à échoué", "SUPPRESSION CLIENT",{
-            "positionClass": "toast-top-center"
+            "positionClass": "toast-bottom-right"
+        })
+    </script>
+<?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'add-contact'){ ?>
+    <script type="text/javascript">
+        toastr.error("La création du contact à échoué", "CREATION CONTACT",{
+            "positionClass": "toast-bottom-right"
         })
     </script>
 <?php } ?>
