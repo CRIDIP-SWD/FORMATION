@@ -194,7 +194,7 @@ include "include/header.php";
 <script src="<?= ROOT,ASSETS,PLUGINS; ?>datatables/datatables.min.js" type="text/javascript"></script>
 <script src="<?= ROOT,ASSETS,PLUGINS; ?>datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>
 
-<script src="<?= ROOT,ASSETS,JS; ?>table-datatables-fixedheader.min.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,JS; ?>table-datatables-fixedheader.js" type="text/javascript"></script>
 <script src="<?= ROOT,ASSETS,JS; ?>datatable.js" type="text/javascript"></script>
 
 
