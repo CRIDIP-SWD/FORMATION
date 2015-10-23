@@ -101,7 +101,31 @@ include "include/header.php";
                                 </div>
                                 <form class="form-horizontal" action="<?= ROOT,CONTROL; ?>client.php" method="post">
                                     <div class="modal-body">
-
+                                        <div class="form-group form-md-line-input">
+                                            <input type="text" class="form-control" name="nom_societe" id="form_control_1">
+                                            <label for="form_control_1">Nom de la société</label>
+                                            <span class="help-block">Entrer le nom de la société</span>
+                                        </div>
+                                        <div class="form-group form-md-line-input">
+                                            <textarea class="form-control" rows="3" name="adresse"></textarea>
+                                            <label for="form_control_1"></label>
+                                            <span class="help-block">Entrer le l'adresse de la société</span>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group form-md-line-input">
+                                                    <input type="text" class="form-control" name="code_postal" id="form_control_1">
+                                                    <label for="form_control_1">Code Postal</label>
+                                                    <span class="help-block">FORMAT: 99999</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group form-md-line-input">
+                                                    <input type="text" class="form-control" name="ville" id="form_control_1">
+                                                    <label for="form_control_1">Ville</label>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn dark btn-outline" data-dismiss="modal">Close</button>
