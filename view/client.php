@@ -103,6 +103,14 @@ include "include/header.php";
                                     <i class="icon-bank font-grey-gallery"></i>
                                     <span class="caption-subject bold font-grey-gallery uppercase"> <?= $client['nom_societe']; ?> </span>
                                 </div>
+                                <div class="actions">
+                                    <a class="btn btn-circle btn-default" data-toggle="modal" href="#edit-client-modal">
+                                        <i class="fa fa-pencil"></i> Editer la société
+                                    </a>
+                                    <a class="btn btn-circle btn-danger" href="javascript:;">
+                                        <i class="fa fa-trash"></i> Supprimer
+                                    </a>
+                                </div>
                             </div>
                             <div class="portlet-body">
                                 <table style="width: 100%;">
@@ -121,6 +129,27 @@ include "include/header.php";
                                     </tr>
                                 </table>
 
+                            </div>
+                            <div class="modal fade bs-modal-lg" id="edit-client-modal" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header bg-primary">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                            <h4 class="modal-title"><i class="fa fa-edit"></i> Edition de la société</h4>
+                                        </div>
+                                        <form class="form-horizontal" action="<?= ROOT,CONTROL; ?>client.php" method="post">
+                                            <div class="modal-body">
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn dark btn-outline" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn green" name="action" value="edit-client-control"><i class="fa fa-check"></i> Valider</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
                             </div>
                         </div>
                     </div>
