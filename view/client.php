@@ -87,7 +87,8 @@ include "include/header.php";
                                     </td>
                                     <td> Tel: <?= $client['telephone']; ?> </td>
                                     <td>
-                                        <a href="index.php?view=client&sub=view-client" class="btn tooltips" data-container="body" data-placement="top" data-original-title="Voir la fiche"><i class="fa fa-eye text-primary"></i></a>
+                                        <a href="index.php?view=client&sub=view-client&idclient=<?= $client['idclient']; ?>" class="btn tooltips" data-container="body" data-placement="top" data-original-title="Voir la fiche"><i class="fa fa-eye text-primary"></i></a>
+                                        <a href="<?= ROOT,CONTROL; ?>client.php?supp-client-control=Valider&idclient=<?= $client['idclient']; ?>" class="btn tooltips" data-container="body" data-placement="top" data-original-title="Supprimer"><i class="fa fa-trash text-danger"></i></a>
                                     </td>
                                 </tr>
                             <?php } ?>
