@@ -6,6 +6,7 @@
     </div>
 </div>
 <!-- END FOOTER -->
+<link href="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-toastr/toastr.min.css" rel="stylesheet" type="text/css"/>
 <!--[if lt IE 9]>
 <script src="<?= ROOT,ASSETS,PLUGINS; ?>respond.min.js"></script>
 <script src="<?= ROOT,ASSETS,PLUGINS; ?>excanvas.min.js"></script>
@@ -18,6 +19,7 @@
 <script src="<?= ROOT,ASSETS,PLUGINS; ?>jquery.blockui.min.js" type="text/javascript"></script>
 <script src="<?= ROOT,ASSETS,PLUGINS; ?>uniform/jquery.uniform.min.js" type="text/javascript"></script>
 <script src="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-toastr/toastr.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN THEME GLOBAL SCRIPTS -->
 <script src="<?= ROOT,ASSETS,JS; ?>app.min.js" type="text/javascript"></script>
