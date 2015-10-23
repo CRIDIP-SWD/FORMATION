@@ -52,6 +52,11 @@ include "include/header.php";
                             <i class="icon-user font-dark"></i>
                             <span class="caption-subject bold uppercase">Liste des Clients</span>
                         </div>
+                        <div class="actions">
+                            <a class="btn btn-circle btn-success" data-toggle="modal" href="#add-client-modal">
+                                <i class="fa fa-plus"></i> Ajout d'un client
+                            </a>
+                        </div>
                     </div>
                     <div class="portlet-body">
                         <table class="table table-striped table-bordered table-hover table-header-fixed" id="sample_1">
@@ -86,6 +91,27 @@ include "include/header.php";
                             <?php } ?>
                             </tbody>
                         </table>
+                    </div>
+                    <div class="modal fade bs-modal-lg" id="add-client-modal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header bg-success">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                    <h4 class="modal-title"><i class="fa fa-plus"></i> Ajout d'un client</h4>
+                                </div>
+                                <form class="form-horizontal" action="<?= ROOT,CONTROL; ?>client.php" method="post">
+                                    <div class="modal-body">
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn dark btn-outline" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn green" name="action" value="add-client-control"><i class="fa fa-check"></i> Valider</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
                     </div>
                 </div>
             <?php } ?>
