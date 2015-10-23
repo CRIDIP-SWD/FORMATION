@@ -96,7 +96,7 @@ include "include/header.php";
                 $client = mysql_fetch_array($sql_client);
                 ?>
                 <div class="row">
-                    <div class="col-md-5">
+                    <div class="col-md-4">
                         <div class="portlet light">
                             <div class="portlet-title">
                                 <div class="caption">
@@ -121,6 +121,46 @@ include "include/header.php";
                                     </tr>
                                 </table>
 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption font-dark">
+                                    <i class="icon-settings font-dark"></i>
+                                    <span class="caption-subject bold uppercase">Header Fixed</span>
+                                </div>
+                                <div class="actions">
+                                    <div class="btn-group btn-group-devided" data-toggle="buttons">
+                                        <label class="btn btn-transparent dark btn-outline btn-circle btn-sm active">
+                                            <input type="radio" name="options" class="toggle" id="option1">Actions</label>
+                                        <label class="btn btn-transparent dark btn-outline btn-circle btn-sm">
+                                            <input type="radio" name="options" class="toggle" id="option2">Settings</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <table class="table table-striped table-bordered table-hover table-header-fixed" id="sample_1">
+                                    <thead>
+                                        <tr class="">
+                                            <th> Rendering engine </th>
+                                            <th> Browser </th>
+                                            <th> Platform(s) </th>
+                                            <th> Engine version </th>
+                                            <th> CSS grade </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td> Trident </td>
+                                            <td> Internet Explorer 4.0 </td>
+                                            <td> Win 95+ </td>
+                                            <td> 4 </td>
+                                            <td> X </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
