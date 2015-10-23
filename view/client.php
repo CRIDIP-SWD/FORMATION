@@ -159,7 +159,9 @@ include "include/header.php";
                                                 <strong><i class="fa fa-envelope"></i> Mail:</strong> <?= $contact['mail_contact']; ?><br>
                                                 <strong><i class="fa fa-skype"></i> Skype:</strong> <?= $contact['skype_contact']; ?>
                                             </td>
-                                            <td> Win 95+ </td>
+                                            <td>
+                                                <strong>Login:</strong> <?= $contact['login']; ?>
+                                            </td>
                                             <td> 4 </td>
                                             <td> X </td>
                                         </tr>
