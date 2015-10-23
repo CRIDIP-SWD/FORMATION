@@ -517,13 +517,9 @@ include "include/header.php";
     if(document.getElementById('radio53').checked)
     {
         document.getElementById("pseudo_champs").style.display="block";
-    }else{
-        document.getElementById("pseudo_champs").style.display="none";
     }
     if(document.getElementById('radio54').checked){
         document.getElementById("pseudo_champs").style.display="none";
-    }else{
-        document.getElementById("pseudo_champs").style.display="block";
     }
 </script>
 
