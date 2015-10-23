@@ -166,7 +166,7 @@ include "include/header.php";
                                     <a class="btn btn-circle btn-default" data-toggle="modal" href="#edit-client-modal">
                                         <i class="fa fa-pencil"></i> Editer la société
                                     </a>
-                                    <a class="btn btn-circle btn-danger" href="javascript:;">
+                                    <a class="btn btn-circle btn-danger" href="<?= ROOT,CONTROL; ?>client.php?action=supp-client-control&idclient=<?= $client['idclient']; ?>">
                                         <i class="fa fa-trash"></i> Supprimer
                                     </a>
                                 </div>
