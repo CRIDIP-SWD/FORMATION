@@ -290,7 +290,7 @@ include "include/header.php";
                                                 <strong>Login:</strong> <?= $contact['login']; ?>
                                             </td>
                                             <td>
-                                                <a href="<?= ROOT,CONTROL; ?>client.php?action=supp-contact-control&idclient=<?= $client['idclient']; ?>" class="btn tooltips" data-container="body" data-placement="top" data-original-title="Supprimer"><i class="fa fa-trash text-danger"></i></a>
+                                                <a href="<?= ROOT,CONTROL; ?>client.php?action=supp-contact-control&idcontact=<?= $contact['idcontact']; ?>" class="btn tooltips" data-container="body" data-placement="top" data-original-title="Supprimer"><i class="fa fa-trash text-danger"></i></a>
                                             </td>
                                         </tr>
                                     <?php } ?>
@@ -481,6 +481,13 @@ include "include/header.php";
         })
     </script>
 <?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'supp-contact'){ ?>
+    <script type="text/javascript">
+        toastr.success("Le contact <strong><?= $_GET['post']; ?></strong> à bien été supprimé.", "SUPPRESSION CONTACT",{
+            "positionClass": "toast-bottom-right"
+        })
+    </script>
+<?php } ?>
 
 <?php if(isset($_GET['error']) && $_GET['error'] == 'add-client'){ ?>
     <script type="text/javascript">
@@ -506,6 +513,13 @@ include "include/header.php";
 <?php if(isset($_GET['error']) && $_GET['error'] == 'add-contact'){ ?>
     <script type="text/javascript">
         toastr.error("La création du contact à échoué", "CREATION CONTACT",{
+            "positionClass": "toast-bottom-right"
+        })
+    </script>
+<?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'supp-contact'){ ?>
+    <script type="text/javascript">
+        toastr.error("La suppression du contact à échoué", "SUPPRESSION CONTACT",{
             "positionClass": "toast-bottom-right"
         })
     </script>

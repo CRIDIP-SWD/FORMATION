@@ -144,5 +144,23 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-contact-control'){
 }
 if(isset($_GET['action']) && $_GET['action'] == 'supp-contact-control'){
     include "../include/config.php";
-    $idclient = $_GET['idclient'];
+    $idcontact = $_GET['idcontact'];
+    $sql_contact = mysql_query("SELECT idcontact FROM contact WHERE idcontact = '$idcontact'")or die(mysql_error());
+    $contact = mysql_fetch_array($sql_contact);
+    $nom_contact = $contact['nom_contact'];
+    $prenom_contact = $contact['prenom_contact'];
+    $idclient = $contact['idclient'];
+
+    $sql_del_login = mysql_query("DELETE FROM utilisateur WHERE idcontact = '$idcontact'")or die(mysql_error());
+    $sql_del_contact = mysql_query("DELETE FROM utilisateur WHERE idcontact = '$idcontact'")or die(mysql_error());
+
+    if($sql_del_login === TRUE AND $sql_del_contact === TRUE)
+    {
+        header("Location: ../index.php?view=client&sub=view-client&idclient=$idclient&post=$nom_contact $prenom_contact&success=supp-contact");
+    }else{
+        header("Location: ../index.php?view=client&sub=view-client&idclient=$idclient&error=supp-contact");
+    }
+
+
+
 }
