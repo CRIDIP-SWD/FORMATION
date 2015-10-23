@@ -101,31 +101,40 @@ include "include/header.php";
                                 </div>
                                 <form class="form-horizontal" action="<?= ROOT,CONTROL; ?>client.php" method="post">
                                     <div class="modal-body">
-                                        <div class="form-group form-md-line-input">
-                                            <input type="text" class="form-control" name="nom_societe" id="form_control_1">
-                                            <label for="form_control_1">Nom de la société</label>
-                                            <span class="help-block">Entrer le nom de la société</span>
-                                        </div>
-                                        <div class="form-group form-md-line-input">
-                                            <textarea class="form-control" rows="3" name="adresse"></textarea>
-                                            <label for="form_control_1">Adresse</label>
-                                            <span class="help-block">Entrer le l'adresse de la société</span>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group form-md-line-input">
-                                                    <input type="text" class="form-control" name="code_postal" id="form_control_1">
-                                                    <label for="form_control_1">Code Postal</label>
-                                                    <span class="help-block">FORMAT: 99999</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group form-md-line-input">
-                                                    <input type="text" class="form-control" name="ville" id="form_control_1">
-                                                    <label for="form_control_1">Ville</label>
-                                                </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Nom de la société</label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="nom_societe" class="form-control">
                                             </div>
                                         </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Adresse Postal</label>
+                                            <div class="col-md-9">
+                                                <textarea rows="3" class="form-control" name="adresse"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Code Postal</label>
+                                            <div class="col-md-3">
+                                                <input type="text" name="code_postal" class="form-control">
+                                            </div>
+                                            <label class="col-md-2 control-label">Ville</label>
+                                            <div class="col-md-5">
+                                                <input type="text" name="ville" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Téléphone</label>
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-phone"></i>
+                                                        </span>
+                                                    <input type="text" name="telephone" id="mask_tel" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn dark btn-outline" data-dismiss="modal">Close</button>
@@ -298,9 +307,17 @@ include "include/header.php";
 
 <script src="<?= ROOT,ASSETS,PLUGINS; ?>datatables/datatables.min.js" type="text/javascript"></script>
 <script src="<?= ROOT,ASSETS,PLUGINS; ?>datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>ckeditor/ckeditor.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-pwstrength/pwstrength-bootstrap.min.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>autosize/autosize.min.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>jquery-inputmask/jquery.inputmask.bundle.min.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,PLUGINS; ?>jquery.input-ip-address-control-1.0.min.js" type="text/javascript"></script>
 
 <script src="<?= ROOT,ASSETS,JS; ?>table-datatables-fixedheader.js" type="text/javascript"></script>
 <script src="<?= ROOT,ASSETS,JS; ?>datatable.js" type="text/javascript"></script>
+<script src="<?= ROOT,ASSETS,JS; ?>components-form-tools.js" type="text/javascript"></script>
+
 
 
 <!-- BEGIN SCRIPT PAGE -->

@@ -72,6 +72,9 @@ var ComponentsFormTools = function () {
             placeholder: " ",
             clearMaskOnLostFocus: true
         }); //default
+        $("#mask_tel").inputmask("mask",{
+            "mask": "99-99-99-99-99"
+        });
     }
 
     var handleIPAddressInput = function () {
