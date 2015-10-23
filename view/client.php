@@ -162,7 +162,9 @@ include "include/header.php";
                                             <td>
                                                 <strong>Login:</strong> <?= $contact['login']; ?>
                                             </td>
-                                            <td> X </td>
+                                            <td>
+                                                <a href="<?= ROOT,CONTROL; ?>client.php?supp-contact-control=Valider&idclient=<?= $client['idclient']; ?>" class="btn tooltips" data-container="body" data-placement="top" data-original-title="Supprimer"><i class="fa fa-trash text-danger"></i></a>
+                                            </td>
                                         </tr>
                                     <?php } ?>
                                     </tbody>
