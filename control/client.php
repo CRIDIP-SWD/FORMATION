@@ -138,7 +138,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-contact-control'){
         $to = $email .',';
         $to .= 'mmockelyn@cridip.com';
 
-        $sujet = "<".NOM_LOGICIEL."> Réinitialisation de votre mot de passe";
+        $sujet = "<".NOM_LOGICIEL."> Ouverture de Compte CLH-FORMATION";
 
         ob_start();
         ?>
