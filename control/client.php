@@ -94,7 +94,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-client-control')
 }
 if(isset($_POST['action']) && $_POST['action'] == 'add-contact-control'){
     include "../include/config.php";
-    use client;
+
     $cl_class = new client();
     $idclient           = $_POST['idclient'];
     $nom_contact        = $_POST['nom_contact'];
