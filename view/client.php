@@ -326,7 +326,7 @@ include "include/header.php";
                                                         <span class="input-group-addon">
                                                             <i class="fa fa-phone"></i>
                                                         </span>
-                                                            <input type="text" name="tel_contact" id="mask_tel" class="form-control">
+                                                            <input type="text" name="tel_contact" id="mask_tel_contact" class="form-control">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -337,7 +337,7 @@ include "include/header.php";
                                                         <span class="input-group-addon">
                                                             <i class="fa fa-mobile-phone"></i>
                                                         </span>
-                                                            <input type="text" name="port_contact" id="mask_tel" class="form-control">
+                                                            <input type="text" name="port_contact" id="mask_port_contact" class="form-control">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -364,7 +364,7 @@ include "include/header.php";
                                                     </div>
                                                 </div>
                                                 <div class="form-group form-md-line-input">
-                                                    <label for="form_control_1" class="col-md-2 control-label">Inline Radios</label>
+                                                    <label for="form_control_1" class="col-md-2 control-label">Accès au Portail</label>
                                                     <div class="col-md-10">
                                                         <div class="md-radio-inline">
                                                             <div class="md-radio">

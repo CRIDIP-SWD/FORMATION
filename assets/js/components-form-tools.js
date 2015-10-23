@@ -75,6 +75,12 @@ var ComponentsFormTools = function () {
         $("#mask_tel").inputmask("mask",{
             "mask": "99-99-99-99-99"
         });
+        $("#mask_tel_contact").inputmask("mask",{
+            "mask": "99-99-99-99-99"
+        });
+        $("#mask_port_contact").inputmask("mask",{
+            "mask": "99-99-99-99-99"
+        });
     }
 
     var handleIPAddressInput = function () {
