@@ -321,34 +321,22 @@ include "include/header.php";
 
 
 <!-- BEGIN SCRIPT PAGE -->
-<?php if(isset($_GET['success']) && $_GET['success'] == 'add-formation-inter'){ ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'add-client'){ ?>
     <script type="text/javascript">
-        toastr.success("Votre demande à bien été pris en compte. Un responsable vous contactera bientôt afin de finaliser votre demande !", "DEMANDE DE FORMATION INTER ENTREPRISE",{
+        toastr.success("Le client <strong><?= $_GET['post']; ?></strong> à bien été crée.", "CREATION CLIENT",{
             "positionClass": "toast-top-center"
         })
     </script>
 <?php } ?>
-<?php if(isset($_GET['success']) && $_GET['success'] == 'add-formation-catalogue'){ ?>
+
+<?php if(isset($_GET['error']) && $_GET['error'] == 'add-client'){ ?>
     <script type="text/javascript">
-        toastr.success("Votre demande à bien été pris en compte. Un responsable vous contactera bientôt afin de finaliser votre demande !", "DEMANDE DE FORMATION SUR CATALOGUE",{
+        toastr.error("La création du client à échoué", "CREATION CLIENT",{
             "positionClass": "toast-top-center"
         })
     </script>
 <?php } ?>
-<?php if(isset($_GET['error']) && $_GET['error'] == 'add-formation-inter'){ ?>
-    <script type="text/javascript">
-        toastr.error("Une erreur à eu lieu lors de votre demande.<br>Veuillez contacter l'administrateur système.", "DEMANDE DE FORMATION INTER ENTREPRISE",{
-            "positionClass": "toast-top-center"
-        })
-    </script>
-<?php } ?>
-<?php if(isset($_GET['error']) && $_GET['error'] == 'add-formation-catalogue'){ ?>
-    <script type="text/javascript">
-        toastr.error("Une erreur à eu lieu lors de votre demande.<br>Veuillez contacter l'administrateur système.", "DEMANDE DE FORMATION SUR CATALOGUE",{
-            "positionClass": "toast-top-center"
-        })
-    </script>
-<?php } ?>
+
 <!-- END SCRIPT PAGE -->
 </body>
 
