@@ -49,16 +49,8 @@ include "include/header.php";
                 <div class="portlet light bordered">
                     <div class="portlet-title">
                         <div class="caption font-dark">
-                            <i class="icon-settings font-dark"></i>
-                            <span class="caption-subject bold uppercase">Header Fixed</span>
-                        </div>
-                        <div class="actions">
-                            <div class="btn-group btn-group-devided" data-toggle="buttons">
-                                <label class="btn btn-transparent dark btn-outline btn-circle btn-sm active">
-                                    <input type="radio" name="options" class="toggle" id="option1">Actions</label>
-                                <label class="btn btn-transparent dark btn-outline btn-circle btn-sm">
-                                    <input type="radio" name="options" class="toggle" id="option2">Settings</label>
-                            </div>
+                            <i class="icon-user font-dark"></i>
+                            <span class="caption-subject bold uppercase">Liste des Clients</span>
                         </div>
                     </div>
                     <div class="portlet-body">
@@ -94,6 +86,43 @@ include "include/header.php";
                             <?php } ?>
                             </tbody>
                         </table>
+                    </div>
+                </div>
+            <?php } ?>
+            <?php if(isset($_GET['sub']) && $_GET['sub'] == 'view-client'){ ?>
+                <?php
+                $idclient = $_GET['idclient'];
+                $sql_client = mysql_query("SELECT * FROM client WHERE idclient = '$idclient'")or die(mysql_error());
+                $client = mysql_fetch_array($sql_client);
+                ?>
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="portlet light">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-bank font-grey-gallery"></i>
+                                    <span class="caption-subject bold font-grey-gallery uppercase"> <?= $client['nom_societe']; ?> </span>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <table>
+                                    <tr>
+                                        <td style="font-weight: bold;">Adresse:</td>
+                                        <td>
+                                            <?= html_entity_decode($client['adresse']); ?><br>
+                                            <?= $client['code_postal']; ?> <?= $client['ville']; ?>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: bold;">Coordonnée:</td>
+                                        <td>
+                                            Tel: <?= $client['telephone']; ?>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             <?php } ?>
