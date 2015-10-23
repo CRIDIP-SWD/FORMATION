@@ -368,7 +368,7 @@ include "include/header.php";
                                                     <div class="col-md-10">
                                                         <div class="md-radio-inline">
                                                             <div class="md-radio">
-                                                                <input type="radio" value="1" class="md-radiobtn" name="access_portail[]" id="radio53">
+                                                                <input type="radio" value="1" class="md-radiobtn" name="access_portail" id="radio53" onclick="document.getElementById('pseudo_champs').style.display='block'">
                                                                 <label for="radio53">
                                                                     <span></span>
                                                                     <span class="check"></span>
@@ -376,7 +376,7 @@ include "include/header.php";
                                                                 </label>
                                                             </div>
                                                             <div class="md-radio">
-                                                                <input type="radio" checked="" value="0" class="md-radiobtn" name="access_portail[]" id="radio54">
+                                                                <input type="radio" checked="" value="0" class="md-radiobtn" name="access_portail" id="radio54" onclick="document.getElementById('pseudo_champs').style.display='none'">
                                                                 <label for="radio54">
                                                                     <span></span>
                                                                     <span class="check"></span>
@@ -387,7 +387,7 @@ include "include/header.php";
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="form-group" id="pseudo_champs">
+                                                <div class="form-group" id="pseudo_champs" style="display: none;">
                                                     <label class="col-md-3 control-label">Nom d'utilisateur</label>
                                                     <div class="col-md-9">
                                                         <div class="input-group">
@@ -513,14 +513,7 @@ include "include/header.php";
 
 
 <script type="text/javascript">
-    document.getElementById("pseudo_champs").style.display="none";
-    if(document.getElementById('radio53').checked)
-    {
-        document.getElementById("pseudo_champs").style.display="block";
-    }
-    if(document.getElementById('radio54').checked){
-        document.getElementById("pseudo_champs").style.display="none";
-    }
+
 </script>
 
 <!-- END SCRIPT PAGE -->
