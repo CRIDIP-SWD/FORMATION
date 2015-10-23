@@ -85,7 +85,7 @@ include "include/header.php";
                                     <td> Tel: <?= $client['telephone']; ?> </td>
                                     <td>
                                         <a href="index.php?view=client&sub=view-client&idclient=<?= $client['idclient']; ?>" class="btn tooltips" data-container="body" data-placement="top" data-original-title="Voir la fiche"><i class="fa fa-eye text-primary"></i></a>
-                                        <a href="<?= ROOT,CONTROL; ?>client.php?supp-client-control=Valider&idclient=<?= $client['idclient']; ?>" class="btn tooltips" data-container="body" data-placement="top" data-original-title="Supprimer"><i class="fa fa-trash text-danger"></i></a>
+                                        <a href="<?= ROOT,CONTROL; ?>client.php?action=supp-client-control&idclient=<?= $client['idclient']; ?>" class="btn tooltips" data-container="body" data-placement="top" data-original-title="Supprimer"><i class="fa fa-trash text-danger"></i></a>
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -137,7 +137,7 @@ include "include/header.php";
 
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn dark btn-outline" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn dark btn-outline" data-dismiss="modal">Fermer</button>
                                         <button type="submit" class="btn green" name="action" value="add-client-control"><i class="fa fa-check"></i> Valider</button>
                                     </div>
                                 </form>
@@ -197,11 +197,45 @@ include "include/header.php";
                                             <h4 class="modal-title"><i class="fa fa-edit"></i> Edition de la société</h4>
                                         </div>
                                         <form class="form-horizontal" action="<?= ROOT,CONTROL; ?>client.php" method="post">
+                                            <input type="hidden" name="idclient" value="<?= $idclient; ?>" />
                                             <div class="modal-body">
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">Nom de la société</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" name="nom_societe" value="<?= $client['nom_societe']; ?>" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">Adresse Postal</label>
+                                                    <div class="col-md-9">
+                                                        <textarea rows="3" class="form-control" name="adresse"><?= html_entity_decode($client['adresse']); ?></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">Code Postal</label>
+                                                    <div class="col-md-3">
+                                                        <input type="text" name="code_postal" value="<?= $client['code_postal']; ?>" class="form-control">
+                                                    </div>
+                                                    <label class="col-md-2 control-label">Ville</label>
+                                                    <div class="col-md-5">
+                                                        <input type="text" name="ville" value="<?= $client['ville']; ?>" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">Téléphone</label>
+                                                    <div class="col-md-9">
+                                                        <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-phone"></i>
+                                                        </span>
+                                                            <input type="text" name="telephone" value="<?= $client['telephone']; ?>" id="mask_tel" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
 
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn dark btn-outline" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn dark btn-outline" data-dismiss="modal">Fermer</button>
                                                 <button type="submit" class="btn green" name="action" value="edit-client-control"><i class="fa fa-check"></i> Valider</button>
                                             </div>
                                         </form>
@@ -328,10 +362,38 @@ include "include/header.php";
         })
     </script>
 <?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'edit-client'){ ?>
+    <script type="text/javascript">
+        toastr.success("Le client <strong><?= $_GET['post']; ?></strong> à bien été modifié.", "EDITION CLIENT",{
+            "positionClass": "toast-top-center"
+        })
+    </script>
+<?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'supp-client'){ ?>
+    <script type="text/javascript">
+        toastr.success("Le client <strong><?= $_GET['post']; ?></strong> à bien été supprimé.", "SUPPRESSION CLIENT",{
+            "positionClass": "toast-top-center"
+        })
+    </script>
+<?php } ?>
 
 <?php if(isset($_GET['error']) && $_GET['error'] == 'add-client'){ ?>
     <script type="text/javascript">
         toastr.error("La création du client à échoué", "CREATION CLIENT",{
+            "positionClass": "toast-top-center"
+        })
+    </script>
+<?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'edit-client'){ ?>
+    <script type="text/javascript">
+        toastr.error("La modification du client à échoué", "EDITION CLIENT",{
+            "positionClass": "toast-top-center"
+        })
+    </script>
+<?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'supp-client'){ ?>
+    <script type="text/javascript">
+        toastr.error("La suppression du client à échoué", "SUPPRESSION CLIENT",{
             "positionClass": "toast-top-center"
         })
     </script>
