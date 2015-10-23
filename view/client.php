@@ -45,7 +45,7 @@ include "include/header.php";
             </ul>
             <!-- END PAGE BREADCRUMB -->
             <!-- BEGIN PAGE BASE CONTENT -->
-            <?php if(!isset($_GET)){ ?>
+            <?php if(!isset($_GET['sub'])){ ?>
                 <div class="portlet light bordered">
                     <div class="portlet-title">
                         <div class="caption font-dark">
