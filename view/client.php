@@ -529,15 +529,15 @@ include "include/header.php";
 
     if(CheckRadio("radio53"))
     {
-        document.getElementById("pseudo_champs").style.display="block";
-    }else{
         document.getElementById("pseudo_champs").style.display="none";
+    }else{
+        document.getElementById("pseudo_champs").style.display="block";
     }
     if(CheckRadio("radio54"))
     {
-        document.getElementById("pseudo_champs").style.display="none";
-    }else{
         document.getElementById("pseudo_champs").style.display="block";
+    }else{
+        document.getElementById("pseudo_champs").style.display="none";
     }
 </script>
 
