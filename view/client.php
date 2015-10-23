@@ -162,7 +162,6 @@ include "include/header.php";
                                             <td>
                                                 <strong>Login:</strong> <?= $contact['login']; ?>
                                             </td>
-                                            <td> 4 </td>
                                             <td> X </td>
                                         </tr>
                                     <?php } ?>
