@@ -514,30 +514,18 @@ include "include/header.php";
 
 <script type="text/javascript">
     document.getElementById("pseudo_champs").style.display="none";
-    function CheckRadio(name) {
-        //recupere tous les objets qui ont le nom "name"
-        var objs=document.getElementById(name);
-        //Pour chaques objets....
-        for(i=0;i<objs.length;i++) {
-            //Si l'objet en cours en coché on renvoie true
-            if (objs[i].checked==true)
-                return true;
+    if(document.getElementById('radio53').checked)
+    {
+        document.getElementById("pseudo_champs").style.display="block";
+    }else{
+        document.getElementById("pseudo_champs").style.display="none";
+    }
+    if(document.getElementById('radio54').checked){
+        {
+            document.getElementById("pseudo_champs").style.display="none";
+        }else{
+            document.getElementById("pseudo_champs").style.display="block";
         }
-        //Si on arrive ici, aucun radio-bouton n'est coché, on renvoie false
-        return false;
-    }
-
-    if(CheckRadio("radio53"))
-    {
-        document.getElementById("pseudo_champs").style.display="none";
-    }else{
-        document.getElementById("pseudo_champs").style.display="block";
-    }
-    if(CheckRadio("radio54"))
-    {
-        document.getElementById("pseudo_champs").style.display="block";
-    }else{
-        document.getElementById("pseudo_champs").style.display="none";
     }
 </script>
 
