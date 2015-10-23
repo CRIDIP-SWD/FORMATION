@@ -516,7 +516,7 @@ include "include/header.php";
     document.getElementById("pseudo_champs").style.display="none";
     function CheckRadio(name) {
         //recupere tous les objets qui ont le nom "name"
-        var objs=document.getElementsByName(name);
+        var objs=document.getElementById(name);
         //Pour chaques objets....
         for(i=0;i<objs.length;i++) {
             //Si l'objet en cours en coché on renvoie true
@@ -527,7 +527,13 @@ include "include/header.php";
         return false;
     }
 
-    if(CheckRadio("access_portail[]"))
+    if(CheckRadio("radio53"))
+    {
+        document.getElementById("pseudo_champs").style.display="block";
+    }else{
+        document.getElementById("pseudo_champs").style.display="none";
+    }
+    if(CheckRadio("radio54"))
     {
         document.getElementById("pseudo_champs").style.display="block";
     }else{
