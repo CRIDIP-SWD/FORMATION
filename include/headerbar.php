@@ -41,7 +41,7 @@
                         <?php if($info_user['type'] == 0){ ?>
                             <ul class="dropdown-menu dropdown-menu-default">
                                 <li>
-                                    <a href="index.php?view=index&sub=profil">
+                                    <a href="index.php?view=info">
                                         <i class="icon-user"></i> Mon Profil </a>
                                 </li>
                                 <li>
@@ -54,11 +54,11 @@
                         <?php if($info_user['type'] == 1){ ?>
                             <ul class="dropdown-menu dropdown-menu-default">
                                 <li>
-                                    <a href="index.php?view=index&sub=profil">
+                                    <a href="index.php?view=info">
                                         <i class="icon-user"></i> Mes Informations </a>
                                 </li>
                                 <li>
-                                    <a href="index.php?view=index&sub=formation">
+                                    <a href="index.php?view=formation">
                                         <i class="icon-calendar"></i> Mes Formations </a>
                                 </li>
                                 <li>
