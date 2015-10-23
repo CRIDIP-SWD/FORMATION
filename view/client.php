@@ -108,7 +108,7 @@ include "include/header.php";
                                         </div>
                                         <div class="form-group form-md-line-input">
                                             <textarea class="form-control" rows="3" name="adresse"></textarea>
-                                            <label for="form_control_1"></label>
+                                            <label for="form_control_1">Adresse</label>
                                             <span class="help-block">Entrer le l'adresse de la société</span>
                                         </div>
                                         <div class="row">
