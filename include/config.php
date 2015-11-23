@@ -5,7 +5,7 @@ DEFINE("VERSION_LOGICIEL", "0.1.0");
 DEFINE("BUILD_LOGICIEL", "1236");
 
 //DEFINE LINK
-DEFINE("ROOT", "http://192.168.40.129/formation/");
+DEFINE("ROOT", "http://vps221243.ovh.net/formation/");
 DEFINE("ASSETS", "assets/");
     DEFINE("CSS", "css/");
     DEFINE("IMG", "img/");
@@ -84,9 +84,9 @@ function nom_page($page)
 
 class database{
     public $host = "localhost";
-    public $user = "formations";
+    public $user = "root";
     public $pass = "1992maxime";
-    public $base = "formations";
+    public $base = "formation";
 
     public function __construct()
     {
